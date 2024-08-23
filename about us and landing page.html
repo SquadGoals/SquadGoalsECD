@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ABOUT US LANDING PAGE</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width , initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<section class = "hero">
+<div class="heading">
+<h1><u>ABOUT US</u></h1>
+</div>
+<div class="container">
+<div class="hero-content">
+<h2>Welcome to Small Steps</h2>
+<br>
+<p>Welcome to our Small Steps Family, We’re thrilled to have you join us on this exciting journey of growth and discovery. Let’s nurture, learn, and play together!
+Learn more about our institution and our dedicated staff members who aim to provide the best service in order to help your kids stay ahead of the curve. </p>
+<br>
+
+<a href="./ECD SYSTEM ABOUT US.html">
+<button class="cta-button">ABOUT US AND STAFF</button>
+</a>
+</div>
+<div class="steps-icon">
+<img src="./images/AboutUs/images/3.png">
+</div>
+</section>
+</body>
+</html>
+
+<style>
+*{
+margin: 0px;
+padding:0px;
+box-sizing: border-box;
+font-family: "Arial",sans-serif;
+}
+.hero {
+background-color:#f8f8f8f8 ;
+overflow: hidden;
+}
+.heading h1{
+color:#ff6347;
+font-size: 55px;
+text-align: center;
+margin-top: 35px;
+}
+.container{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 90%;
+margin: 65px auto;
+}
+
+.hero-content {
+flex:1;
+width:600px;
+margin:0px 25px;
+animation: fadeInUp 2s ease;
+}
+
+.hero-content h2{
+font-size:38px;
+margin-bottom:20px;
+color:#333
+}
+
+.hero-content p{
+font-size: 24px;
+line-height: 1.5;
+margin-bottom: 40px;
+color: #666;
+}
+.hero-content button{
+display: inline-block;
+background-color: #ff4500;
+color:#fff ;
+padding:12px 24px;
+border-radius: 5px;
+font-size: 20px;
+border:none;
+cursor: pointer;
+transition: 0.3s ease;
+}
+.hero-content button:hover{
+background-color: #ff6347;
+transform: scale(1.1);
+}
+.steps-icon{
+flex:1;
+width:600px;
+margin: auto;
+}
+
+.img{
+width:100%;
+height:auto;
+border-radius:10px;
+animation: fadeInRight 2s ease;
+}
+@media screen and (max-width:768px ) 
+{
+.heading h1{
+font-size:45px ;
+margin-top: 30px;
+}
+.hero{
+margin:0px;
+}
+.container{
+width:100%;
+flex-direction: column;
+margin:0px;
+padding:0px 40px;
+}
+.hero-content{
+width:100%;
+margin:35px 0px;
+}
+.hero-content h2{
+font-size:30px;
+}
+
+.hero-content p{
+font: size 18px;
+margin-bottom: 20px;
+}
+
+.hero-content button{
+font-size: 16px;
+padding:8px 16px;
+}
+
+.hero-image{
+width:100%;
+}
+}
+@keyframes fadeInUp{
+0%{
+opacity: 0;
+transform: translateY(50px);
+}
+100%{
+opacity: 1;
+transform: translateY(0px);
+}
+}
+
+@keyframes fadeInRight{
+    0%{
+     opacity: 0;
+     transform: translateX(-50px);
+    }
+    100%{
+    opacity:1;
+    transform: translateX(0px);
+    }
+}
+
+</style>
