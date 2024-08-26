@@ -4,160 +4,235 @@
 <title>ABOUT US LANDING PAGE</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width , initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-<section class = "hero">
-<div class="heading">
-<h1><u>ABOUT US</u></h1>
-</div>
-<div class="container">
-<div class="hero-content">
-<h2>Welcome to Small Steps</h2>
-<br>
-<p>Welcome to our Small Steps Family, We’re thrilled to have you join us on this exciting journey of growth and discovery. Let’s nurture, learn, and play together!
-Learn more about our institution and our dedicated staff members who aim to provide the best service in order to help your kids stay ahead of the curve. </p>
-<br>
+<style>
+    #navbar {
+    position: fixed;
+    top:0;
+    width:100%;
+    height:60px;
+    z-index: 1000;
+    background-color: orange;
+  }
+  .content{
+    margin-top:80px;
+    padding:20px;
+  }
+  
+  #navbar .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  } 
+  
+  
+  .logo {
+    float: left;
+    margin-left: 10px;
+    font-size: 1.5em;
+    height: 50px;
+    letter-spacing: 1px;
+  } @media(max-width: 50px) {
+     
+    }
+  
+  #navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+      }
+  
+  #navbar li {
+    margin: 0 15px;
+    display: inline-block;
+  }
+  
+  #navbar li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  #navbar li a:hover {
+    /* border-bottom: 1px solid rgb(28, 121, 184); */
+    color: rgb(28, 121, 184);
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    text-decoration: underline;
+  }
+  
+  /* Animated Bottom Line */
+  #navbar li a:before, #navbar li a:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: -1px;
+    background: rgb(13, 26, 38);
+  }
+  
+  #navbar li a:before {
+    left: 0;
+    transition: 0.5s;
+  }
+  
+  #navbar li a:after {
+    background: rgb(13, 26, 38);
+    right: 0;
+    /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
+  }
+  
+  #navbar li a:hover:before {
+    background: rgb(13, 26, 38);
+    width: 100%;
+    transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+  }
+  
+  #navbar li a:hover:after {
+    background: transparent;
+    width: 100%;
+    /* transition: 0s; */
+  }
+  h1 {
+  text-align: center;
+  text-indent:20px;
+  margin:0;
+  }
+ 
+  p{
+    align-items: center;
+    font-size: medium;
+    text-indent:100px;
+    text-justify:inter-word;
+    text-align: center;
+    justify-content: center;
+  }
+  body{
+    font-family: cursive;
+    font-weight: 400;
+  }
+  h1 {
+    text-align: center;
+  }
+.Team{
+  background-color:green;
+  padding:20px;
+}
+.Team h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.team-Container{
+  display: flex;
+  justify-content: space-between; /* Distributes cards across the line */
+  align-items: flex-start;
+  gap: 20px; /* Space between testimonial cards */
+  
+}
+.team-card{
+  background-color:white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: 30%; /* Adjust width as needed */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.team-image {
+  max-width: 80px;
+  height: auto;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Information-container {
+      flex-direction: column;
+      align-items: center;
+  }
 
-<a href="./ECD SYSTEM ABOUT US.html">
-<button class="cta-button">ABOUT US AND STAFF</button>
-</a>
-</div>
-<div class="steps-icon">
-<img src="./images/AboutUs/images/3.png">
-</div>
+  .team-card {
+      width: 100%;
+      max-width: 500px; /* Adjust to fit your design */
+      margin-bottom: 20px; /* Space between cards when stacked */
+      border-radius: 8px;
+      height: 50px;
+  }
+
+  .team-card:last-child {
+      margin-bottom: 0; /* Remove margin for the last card */
+  }
+}
+.staff li {
+    list-style-type: none;
+}
+</style>
+</head>
+<header>
+  <nav id="navbar" class="">
+  <div class="nav-wrapper">
+    <!-- Navbar Logo -->
+    <div class="logo">
+      <!-- Logo  -->
+      <a href="#home"><img width="100px" height="50px" src="./images/HomeImages/3.png"></a>
+    </div>
+
+    <!-- Navbar Links -->
+    <ul id="menu">
+      <li><a href="">Home</a></li>
+      <li><a href="./about us and landing page.html">About Us</a></li>
+      <li><a href="./SmallStepsActivities.html">Information</a></li>
+      <li><a href="">Gallery</a></li>
+      <li><a href="./program.html">Programmes</a></li>
+      <li><a href="">Contacts</a></li>
+    </ul>
+  </div>
+</nav>
+</header>
+<body>
+  <h1><u>ABOUT US</u></h1> 
+<p>Welcome to Small Steps, a nurturing and inclusive Early Childhood Development center dedicated to fostering a love of learning in young children. Our passionate team of educators and caregivers provide a safe, stimulating environment that encourages social, emotional, cognitive, and physical growth. We believe in creating an inclusive enviroment that encourages interaction amongst our learners thus in return encoraging them to interact with learners from all walks of life.</p>
+<br>
+</p>
+ 
+<section class="Team">
+    <h3>Meet Our Team</h3>
+    <div class="team-Container">
+        <div class="team-card">
+            <img src="./images/AboutUs/images/zimi.jpg" width=""  class="Information-image">
+            <!-- <h2 class="color1">Enrollment form</h2> -->
+             <ul class="staff">
+            <h3><u>Zimkitha Nongamaza <i>(ECD EDUCATOR)</i></u></h3>
+            <h4><u>Educational Qualifications & Experience</u></h4>
+            <li class="staff">IIE Higher Certificate in Early Childhood Development (ROSEBANK COLLEGE)</li>
+            <li>Diploma in Early Childhood Development (North West University)</li>
+            <li>10 years experience in the ECD field</li>
+             </ul>
+        </div>
+        <div class="team-card">
+            <img src="./images/AboutUs/images/yandisa.jpg" alt="" width="" class="Information-image">
+            <ul class="staff">
+            <h3><u>Yandisa Ndubela <i>(HEAD OF SECURITY)</i></u></h3>
+            <h4><u>Educational Qualifications</u></h4>
+            <li class="staff">Diploma in Law Enforcement (Nelson Mandela University)</li>
+            <li>Former SAPS OFFICER</li>
+            <li>Current Head Of Security</li>
+            </ul>
+        </div>
+        <div class="team-card">
+            <img src="./images/AboutUs/images/ntosh.jpg" alt="" width="" class="Information-image">
+            <ul class="staff">
+            <h3><u>Ntombekhaya Mkaba<i> (CENTRE MANAGER)</i></u></h3>
+            <h4><u>Educational Qualifications & Experience</u></h4>
+            <li>BA General: Majoring in Physcology (Nelson Mandela University)</li>
+            <li>Diploma in Business Management (Nelson Mandela University)</li>
+            <li>3 years as Centre Management</li>
+            </ul>
+        </div>
+    </div>
+</section>
 </section>
 </body>
 </html>
 
-<style>
-*{
-margin: 0px;
-padding:0px;
-box-sizing: border-box;
-font-family: "Arial",sans-serif;
-}
-.hero {
-background-color:#f8f8f8f8 ;
-overflow: hidden;
-}
-.heading h1{
-color:#ff6347;
-font-size: 55px;
-text-align: center;
-margin-top: 35px;
-}
-.container{
-display: flex;
-justify-content: center;
-align-items: center;
-width: 90%;
-margin: 65px auto;
-}
-
-.hero-content {
-flex:1;
-width:600px;
-margin:0px 25px;
-animation: fadeInUp 2s ease;
-}
-
-.hero-content h2{
-font-size:38px;
-margin-bottom:20px;
-color:#333
-}
-
-.hero-content p{
-font-size: 24px;
-line-height: 1.5;
-margin-bottom: 40px;
-color: #666;
-}
-.hero-content button{
-display: inline-block;
-background-color: #ff4500;
-color:#fff ;
-padding:12px 24px;
-border-radius: 5px;
-font-size: 20px;
-border:none;
-cursor: pointer;
-transition: 0.3s ease;
-}
-.hero-content button:hover{
-background-color: #ff6347;
-transform: scale(1.1);
-}
-.steps-icon{
-flex:1;
-width:600px;
-margin: auto;
-}
-
-.img{
-width:100%;
-height:auto;
-border-radius:10px;
-animation: fadeInRight 2s ease;
-}
-@media screen and (max-width:768px ) 
-{
-.heading h1{
-font-size:45px ;
-margin-top: 30px;
-}
-.hero{
-margin:0px;
-}
-.container{
-width:100%;
-flex-direction: column;
-margin:0px;
-padding:0px 40px;
-}
-.hero-content{
-width:100%;
-margin:35px 0px;
-}
-.hero-content h2{
-font-size:30px;
-}
-
-.hero-content p{
-font: size 18px;
-margin-bottom: 20px;
-}
-
-.hero-content button{
-font-size: 16px;
-padding:8px 16px;
-}
-
-.hero-image{
-width:100%;
-}
-}
-@keyframes fadeInUp{
-0%{
-opacity: 0;
-transform: translateY(50px);
-}
-100%{
-opacity: 1;
-transform: translateY(0px);
-}
-}
-
-@keyframes fadeInRight{
-    0%{
-     opacity: 0;
-     transform: translateX(-50px);
-    }
-    100%{
-    opacity:1;
-    transform: translateX(0px);
-    }
-}
-
-</style>
