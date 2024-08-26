@@ -119,7 +119,7 @@
    h1 {
     text-align: center;
     margin: 100px;
-    font-size: 70PX;
+    font-size: 40PX;
  
     /* display:inline-block; */
     
@@ -181,6 +181,53 @@
     list-style-type: none;
 }
 
+.jump {
+  display: inline-block;
+  animation-duration: 1.5s;
+  animation-name: jump;
+  animation-iteration-count: infinite;
+}
+.jump.delay-1 {animation-delay: .1s;}
+.jump.delay-2 {animation-delay: .2s;}
+.jump.delay-3 {animation-delay: .3s;}
+.jump.delay-4 {animation-delay: .4s;}
+.jump.delay-5 {animation-delay: .5s;}
+.jump.delay-6 {animation-delay: .6s;}
+.jump.delay-7 {animation-delay: .7s;}
+.jump.delay-8 {animation-delay: .8s;}
+.jump.delay-9 {animation-delay: .9s;}
+.jump.delay-10 {animation-delay: .10s;}
+.jump.delay-11 {animation-delay: .11s;}
+.jump.delay-12 {animation-delay: .12s;}
+.jump.delay-13 {animation-delay: .13s;}
+.jump.delay-14 {animation-delay: .14s;}
+.jump.delay-15 {animation-delay: .15s;}
+.jump.delay-16 {animation-delay: .16s;}
+.jump.delay-17 {animation-delay: .17s;}
+.jump.delay-18 {animation-delay: .19s;}
+.jump.delay-19 {animation-delay: .19s;}
+@keyframes jump {
+  0%, 100% {
+    transform: scale(1.1,1) translateY(0);
+  }
+  
+  5% {
+    transform: scale(1,1) translateY(-.4em);
+  }
+
+  15% {
+    transform: scale(1.1,.9) translateY(-.5em);
+  }
+  
+  25% {
+    transform: scale(1,1) translateY(-.4em);
+  }
+  
+  30% {
+    transform: scale(1,1) translateY(0);
+  }
+}
+
 </style>
 </head>
 <header>
@@ -207,11 +254,36 @@
 </header>
 <body>
   
-
+  <h1 style="height: 10px;"> <span class="jump">A</span>
+    <span class="jump delay-1">B</span>  
+    <span class="jump delay-2">O</span>
+    <span class="jump delay-3">U</span>
+    <span class="jump delay-4">T</span>
+    &nbsp;  
+    <span class="jump delay-5">U</span>
+    <span class="jump delay-6">S</span>
+    &nbsp;  
+    <span class="jump delay-7">A</span>
+    <span class="jump delay-8">T</span>
+    &nbsp;  
+    <span class="jump delay-9">S</span>
+    <span class="jump delay-10">M</span>
+    <span class="jump delay-11">A</span>
+    <span class="jump delay-12">L</span>
+    <span class="jump delay-13">L</span>
+    &nbsp;  
+    <span class="jump delay-14">S</span>
+    <span class="jump delay-15">T</span>
+    <span class="jump delay-16">E</span>
+    <span class="jump delay-17">P</span>
+    <span class="jump delay-18">S</span>
+   
   
-
-
-  <h1 style="height: 10px;">ABOUT US AT SMALL STEPS</h1> 
+  </h1>
+  
+ 
+<!-- 
+  <h1 style="height: 10px;">ABOUT US AT SMALL STEPS</h1>  -->
 
   <p>Welcome to Small Steps, a nurturing and inclusive Early Childhood Development center dedicated to fostering a love of learning in young children. Our passionate team of educators and caregivers provide a safe, stimulating environment that encourages social, emotional, cognitive, and physical growth. We believe in creating an inclusive enviroment that encourages interaction amongst our learners thus in return encoraging them to interact with learners from all walks of life.</p>
 
@@ -220,7 +292,9 @@
  <br>
  
 <section class="Team">
-    <h3 ">Meet Our Team</h3>
+
+    <h2 style="text-align: center;"><u>MEET OUR TEAM</h2></u>
+
     <div class="team-Container">
         <div class="team-card">
             <img src="./images/AboutUs/images/zimi.jpg" width=""  class="Information-image">
@@ -241,6 +315,7 @@
             <li class="staff">Diploma in Law Enforcement (Nelson Mandela University)</li>
             <li>Former SAPS OFFICER</li>
             <li>Current Head Of Security</li>
+            <li>2 years working at the centre</li>
             </ul>
         </div>
         <div class="team-card">
