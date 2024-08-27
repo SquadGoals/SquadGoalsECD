@@ -1,16 +1,109 @@
 <!DOCTYPE html>
 <html>
-    <header>
-        <title>COGNITIVE DEVELOPMENT</title>
-    </header>
-    <style>
-* body{ font-family: cursive;}
-h1 {color: green; text-align:center; font-size: 55PX; font-weight: 900;}
- img {width: 300px;
+<head>
+<title>CognitiveActivity</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width , initial-scale=1.0">
+<style>
+  * body{ font-family: cursive;}
+    #navbar {
+    position: fixed;
+    top:0;
+    width:100%;
+    height:60px;
+    z-index: 1000;
+    background-color: orange;
+  }
+  .content{
+    margin-top:80px;
+    padding:20px;
+  }
+  
+  #navbar .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  } 
+  
+  
+  .logo {
+    float: left;
+    margin-left: 10px;
+    font-size: 1.5em;
+    height: 50px;
+    letter-spacing: 1px;
+  } @media(max-width: 50px) {
+     
+    }
+  
+  #navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+      }
+  
+  #navbar li {
+    margin: 0 15px;
+    display: inline-block;
+  }
+  
+  #navbar li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  #navbar li a:hover {
+    /* border-bottom: 1px solid rgb(28, 121, 184); */
+    color: rgb(28, 121, 184);
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    text-decoration: underline;
+  }
+  
+  /* Animated Bottom Line */
+  #navbar li a:before, #navbar li a:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: -1px;
+    background: rgb(13, 26, 38);
+  }
+  
+  #navbar li a:before {
+    left: 0;
+    transition: 0.5s;
+  }
+  
+  #navbar li a:after {
+    background: rgb(13, 26, 38);
+    right: 0;
+    /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
+  }
+  
+  #navbar li a:hover:before {
+    background: rgb(13, 26, 38);
+    width: 100%;
+    transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+  }
+  
+  #navbar li a:hover:after {
+    background: transparent;
+    width: 100%;
+    /* transition: 0s; */
+  }
+  h1 {color: green; text-align:center; font-size: 20PX; font-weight: 900;
+margin: 92px;}
+ .activities img {width: 300px;
 height: 300px;
 border-radius: 50%;
-border: 5px solid green;
+border: 5px solid orange;
 float: right ;} 
+h2 { background-color: green;
+color: white;} 
 h2 { background-color: green;
 color: white;}
 
@@ -38,9 +131,7 @@ h3 { color: green; font-weight: 900; text-decoration: underline 5px ;}
   padding: 2px 16px;
 }
 
-.card{ 
 
-}
 
 .jump {
   display: inline-block;
@@ -88,9 +179,48 @@ h3 { color: green; font-weight: 900; text-decoration: underline 5px ;}
     transform: scale(1,1) translateY(0);
   }
 }
+button {
+  background-color: green; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+
+  font-size: 16px;
+  margin: /*4px 2px; */ 70px;
+  cursor: pointer;
+  width: 25%;
+  float:inline-start;
+
+}
+p{color: antiquewhite; }
+a {text-decoration: none;}
 
 
     </style>
+
+<header>
+  <nav id="navbar" class="">
+  <div class="nav-wrapper">
+    <!-- Navbar Logo -->
+    <div class="logo">
+      <!-- Logo  -->
+      <a href="#home"><img width="100px" height="50px" src="./images/HomeImages/3.png"></a>
+    </div>
+
+    <!-- Navbar Links -->
+    <ul id="menu">
+      <li><a href="">Home</a></li>
+      <li><a href="./about us and landing page.html">About Us</a></li>
+      <li><a href="./SmallStepsActivities.html">Information</a></li>
+      <li><a href="">Gallery</a></li>
+      <li><a href="./program.html">Programmes</a></li>
+      <li><a href="">Contacts</a></li>
+    </ul>
+  </div>
+</nav>
+</header>
     <body>
         <h1> <span class="jump">P</span>
           <span class="jump delay-1">H</span>  
@@ -119,6 +249,7 @@ h3 { color: green; font-weight: 900; text-decoration: underline 5px ;}
 
        <h2>Growth and the ability to use muscles and body parts for particular skills </h2>
          <h3>Activities include</h3>
+         <div class="activities">
          <img src=".//images/physical/gross.jfif">
          
          <ul>
@@ -130,6 +261,8 @@ h3 { color: green; font-weight: 900; text-decoration: underline 5px ;}
           
          </ul>
          <img src=".//images/physical/yoga.jfif">
+         </div>
+         <button > <a href="../SquadGoalsECD/SmallStepsActivities.html"><p style="font-weight: bold;"> BACK</p></a></button>
   
     </body>
 
