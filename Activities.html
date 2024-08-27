@@ -3,109 +3,25 @@
 <head>
 <title>ACTIVITIES</title>
 <meta charset="utf-8">
+<link rel="stylesheet" href="Homepage.css"link>
 <meta name="viewport" content="width=device-width , initial-scale=1.0">
 <style>
-    *{
-        font-family: cursive;
-    }
-    #navbar {
-    position: fixed;
-    top:0;
-    width:100%;
-    height:60px;
-    z-index: 1000;
-    background-color: orange;
-  }
-  .content{
-    margin-top:80px;
-    padding:20px;
-  }
-  
-  #navbar .nav-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  } 
-  
-  
-  .logo {
-    float: left;
-    margin-left: 10px;
-    font-size: 1.5em;
-    height: 50px;
-    letter-spacing: 1px;
-  } @media(max-width: 50px) {
-     
-    }
-  
-  #navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-      }
-  
-  #navbar li {
-    margin: 0 15px;
-    display: inline-block;
-  }
-  
-  #navbar li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  #navbar li a:hover {
-    /* border-bottom: 1px solid rgb(28, 121, 184); */
-    color: rgb(28, 121, 184);
-    transition: all 1s ease;
-    -webkit-transition: all 1s ease;
-    text-decoration: underline;
-  }
-  
-  /* Animated Bottom Line */
-  #navbar li a:before, #navbar li a:after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 1px;
-    bottom: -1px;
-    background: rgb(13, 26, 38);
-  }
-  
-  #navbar li a:before {
-    left: 0;
-    transition: 0.5s;
-  }
-  
-  #navbar li a:after {
-    background: rgb(13, 26, 38);
-    right: 0;
-    /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
-  }
-  
-  #navbar li a:hover:before {
-    background: rgb(13, 26, 38);
-    width: 100%;
-    transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
-  }
-  
-  #navbar li a:hover:after {
-    background: transparent;
-    width: 100%;
-    /* transition: 0s; */
-  }
-  a { color: rgba(230, 15, 15, 0.932);}
-  h1 {color: orange; font-size: 50PX ; text-align: center;font-family: cursive; 
-    margin: 70px;
-    padding: 10px 10px 10 10px; 
-    display:inline-block;}
-  .column {
+a { color: rgba(230, 15, 15, 0.932);}
+h1 {color: orange; font-size: 50PX ; text-align: center;font-family: cursive;}
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: cursive;
+}
+
+/* Float four columns side by side */
+.column {
   float: left;
   width: 25%;
-  padding: 20px;
+  padding: 0 10px;
 }
 
 /* Remove extra left and right margins, due to padding */
@@ -132,30 +48,14 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
   text-align: center;
+
  
 }
-.card-img{
+img{
     width: 250px;
   height: 250px;
 }
-button {
-  background-color: green; 
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-
-  font-size: 16px;
-  margin: /*4px 2px; */ 70px;
-  cursor: pointer;
-  width: 25%;
-  float:inline-start;
-
-}
-p{color: antiquewhite; }
-a {text-decoration: none;}
-
+    </style>
 
   </style>
 </head>
@@ -165,66 +65,77 @@ a {text-decoration: none;}
       <!-- Navbar Logo -->
       <div class="logo">
         <!-- Logo  -->
-        <a href="#home"><img width="100px" height="50px" src="./images/HomeImages/3.png"></a>
+        <a href="#home"><img style="max-width: 50%; height: 100%;" src="./images/HomeImages/3.png"></a>
       </div>
   
       <!-- Navbar Links -->
       <ul id="menu">
         <li><a href="">Home</a></li>
         <li><a href="./about us and landing page.html">About Us</a></li>
-        <li><a href="./SmallStepsActivities.html">Information</a></li>
-        <li><a href="">Gallery</a></li>
+        <li><a href="./Activities.html">Activities</a></li>
+        <li><a href="./Gallery.html">Gallery</a></li>
         <li><a href="./program.html">Programmes</a></li>
-        <li><a href="">Contacts</a></li>
+        <li><a href="./Contacts.html">Contacts</a></li>
       </ul>
     </div>
   </nav>
+  <br>
+  <br>
 </header>
 <body>
-    <h1 class="align">OUR ACTIVITIES AT SMALL STEPS</h1>
-    <table>
-    <div class="row">
-        <a href="../SquadGoalsECD/SocialActivity.html">
-        <a href="./SocialActivity.html">
-        <div class="column" style="background-color: rgb(21, 199, 36)">
-          <div class="card">
-            <h3>SOCIAL  LEARNING</h3>
-            <img src="../SquadGoalsECD/images/SOC.jfif" />
-          </div>
-        </div>
-        </a>
-  
+  <br>
 
-        <a href="../SquadGoalsECD/CognitiveActivity.html">
-        <a href="./CognitiveActivity.html">
-        <div class="column" style="background-color: deepskyblue">
-          <div class="card">
-            <h3>COGNITIVE DEVELOPMENT</h3>
-            <img src="../SquadGoalsECD/images/COG.jfif" />
+    <h1 >OUR ACTIVITIES AT SMALL STEPS</h1>
+    <br>
+    <br
+    <table>
+      <div class="row">
+          <a href="../SquadGoalsECD/SocialActivity.html">
+          <a href="./SocialActivity.html">
+          <div class="column" style="background-color: rgb(21, 199, 36)">
+            <div class="card">
+              <h3>SOCIAL  LEARNING</h3>
+              <img src="../SquadGoalsECD/images/SOC.jfif" />
+            </div>
           </div>
-        </div>
-        </a>
+          </a>
     
-        <a href="../SquadGoalsECD/LiteracyActivity.html">
-        <a href="./LiteracyActivity.html">
-        <div class="column" style="background-color: #fae41f">
-          <div class="card">
-            <h3>LANGUAGE AND LITERACY</h3>
-            <img src="../SquadGoalsECD/images/lang.png">
+  
+          <a href="../SquadGoalsECD/CognitiveActivity.html">
+          <a href="./CognitiveActivity.html">
+          <div class="column" style="background-color: deepskyblue">
+            <div class="card">
+              <h3>COGNITIVE DEVELOPMENT</h3>
+              <img src="../SquadGoalsECD/images/COG.jfif" />
+            </div>
           </div>
-        </div>
-        </a>
-     
-        <a href="../SquadGoalsECD/PhysicalActivity.html">
-        <a href="./PhysicalActivity.html">
-        <div class="column" style="background-color: rgb(228, 135, 200)">
-          <div class="card">
-            <h3>PHYSICAL DEVELOPMENT</h3>
-            <img src="../SquadGoalsECD/images/phy.jfif" />
+          </a>
+      
+          <a href="../SquadGoalsECD/LiteracyActivity.html">
+          <a href="./LiteracyActivity.html">
+          <div class="column" style="background-color: #fae41f">
+            <div class="card">
+              <h3>LANGUAGE AND LITERACY</h3>
+              <img src="../SquadGoalsECD/images/lang.png">
+            </div>
           </div>
+          </a>
+       
+          <a href="../SquadGoalsECD/PhysicalActivity.html">
+          <a href="./PhysicalActivity.html">
+          <div class="column" style="background-color: rgb(228, 135, 200)">
+            <div class="card">
+              <h3>PHYSICAL DEVELOPMENT</h3>
+              <img src="../SquadGoalsECD/images/phy.jfif" />
+            </div>
+          </div>
+          </a>
+  
+  
+  
+            
         </div>
-        </a> 
-      </div>
-      <button > <a href="../SquadGoalsECD/SmallStepsActivities.html"><p style="font-weight: bold;"> BACK</p></a></button>
+  </table>
+      <!-- <button > <a href="../SquadGoalsECD/SmallStepsActivities.html"><p style="font-weight: bold;"> BACK</p></a></button> -->
     </body>
 </html>
