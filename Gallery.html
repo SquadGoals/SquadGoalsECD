@@ -1,30 +1,133 @@
+<!DOCTYPE html>
 <html>
-
 <head>
-    <title>HTML and CSS Slideshow</title>
+    <title>Gallery Slideshow</title>
     <style>
       body {
-    font-family: Helvetica, sans-serif;
-    padding: 5%;
+    font-family: cursive;
+    background-color:rgb(245, 245, 185);
+    
+    /* padding: 5%;
     text-align: center;
-    font-size: 50;
+    font-size: 50; */
+}
+#navbar {
+    position: fixed;
+    top:0;
+    width:100%;
+    height:60px;
+    z-index: 1000;
+    background-color: orange;
+  }
+  .content{
+    margin-top:80px;
+    padding:20px;
+  }
+  
+  #navbar .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  } 
+  
+  
+  .logo {
+    float: left;
+    margin-left: 10px;
+    font-size: 1.5em;
+    height: 50px;
+    letter-spacing: 1px;
+  } @media(max-width: 50px) {
+     
+    }
+  
+  #navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
       }
-
+  
+  #navbar li {
+    margin: 0 15px;
+    display: inline-block;
+  }
+  
+  #navbar li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  #navbar li a:hover {
+    /* border-bottom: 1px solid rgb(28, 121, 184); */
+    color: rgb(28, 121, 184);
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    text-decoration: underline;
+  }
+  
+  /* Animated Bottom Line */
+  #navbar li a:before, #navbar li a:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: -1px;
+    background: rgb(13, 26, 38);
+  }
+  
+  #navbar li a:before {
+    left: 0;
+    transition: 0.5s;
+  }
+  
+  #navbar li a:after {
+    background: rgb(13, 26, 38);
+    right: 0;
+    /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
+  }
+  
+  #navbar li a:hover:before {
+    background: rgb(13, 26, 38);
+    width: 100%;
+    transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+  }
+  
+  #navbar li a:hover:after {
+    background: transparent;
+    width: 100%;
+    /* transition: 0s; */
+  }
 
 /* Styling the area of the slides */
 #slideshow {
-    overflow: hidden;
-    height: 510px;
-    width: 728px;
-    margin: 0 auto;
+    overflow:hidden;
+    height: 100%;
+    width: 728px; 
+    margin:70PX;
+    text-align: center; 
+    margin: 0px auto; 
+  /* width:1100px; 
+  height:500px;  */
+  text-align:center;
+  /* border-color: orange; */
+  /* border-width: thick;
+  border-style: dashed; */
+
+
 }
 
 /* Style each of the sides 
   with a fixed width and height */
 .slide {
-    float: left;
-    height: 510px;
+    float:left;
+    height: 100%;
     width: 728px;
+    text-align: center;
+    display:block;
+  
 }
 
 /* Add animation to the slides */
@@ -32,7 +135,7 @@
 
     /* Calculate the total width on the
     basis of number of slides */
-    width: calc(728px * 4);
+    width: calc(728px * 8);
 
     /* Specify the animation with the
     duration and speed */
@@ -45,12 +148,12 @@
   background: orange;
   background-size: cover;
   background-position: center;
-   max-width: 100%;
-   height: auto;
+
+  
 }
 
 .slide:nth-child(2) {
-    background: pink;
+    
     background-size: cover;
     background-position: center;
 }
@@ -58,11 +161,33 @@
 .slide:nth-child(3) {
     /* background: red; */
     background-size: cover;
+    background-position: center;
 }
 
 .slide:nth-child(4) {
     /* background: yellow; */
     background-size: cover;
+    background-position: center;
+}
+.slide:nth-child(5) {
+    /* background: yellow; */
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-child(6) {
+    /* background: yellow; */
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-child(7) {
+    /* background: yellow; */
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-child(8) {
+    /* background: yellow; */
+    background-size: cover;
+    background-position: center;
 }
 
 /* Define the animation 
@@ -86,51 +211,86 @@
     80% {
         margin-left: calc(-728px * 3);
     }
+     100%{
+        margin-left: calc(-728px * 4);
+    }
+    120%{
+        margin-left: calc(-728px * 5);
+    }
+    140%{
+        margin-left: calc(-728px * 6);
+    }
+    160%{
+        margin-left: calc(-728px * 7);
+    }
+
+
+}
+h1{
+    color:orange;
+    text-align: center;
+    font: size 500px;
+    margin: 50px;
 }
 
     </style>
 </head>
+</head>
+<header>
+<nav id="navbar" class="">
+<div class="nav-wrapper">
+  <!-- Navbar Logo -->
+  <div class="logo">
+    <!-- Logo  -->
+    <a href="#home"><img width="100px" height="50px" src="./images/HomeImages/3.png"></a>
+  </div>
 
+  <!-- Navbar Links -->
+  <ul id="menu">
+    <li><a href="../SquadGoalsECD/Homepage.html">Home</a></li>
+    <li><a href="../SquadGoalsECD/about us and landing page.html">About Us</a></li>
+    <li><a href="../SquadGoalsECD/Activities.html">Activities</a></li>
+    <li><a href="../SquadGoalsECD/Gallery.html">Gallery</a></li>
+    <li><a href="../SquadGoalsECD/program.html">Programmes</a></li>
+    <li><a href="../SquadGoalsECD/Contacts.html">Contacts</a></li>
+  </ul>
+</div>
+</nav>
+</header>
 <body>
-
+<br>
     <!-- Define the slideshow container -->
+     <!-- <h1>OUR SCHOOL</h1> -->
     <div id="slideshow">
         <div class="slide-wrapper">
-
-            <!-- Define each of the slides
-         and write the content -->
-
+            <!-- <Define each of the slides
+         and write the content --> 
             <div class="slide">
                 <h1 class="slide-number">
-                  <img src="./images/HomeImages/Background1.jfif"height="510px" width="728" margin="0 auto">
+                  <img src="./images/gallery pictures/black kids 2.jpg"height="510px" width="728" margin="0 auto">
                 </h1>
             </div>
             <div class="slide">
                 <h1 class="slide-number">
-                  <img src="./images/HomeImages/Background2.jfif"height="510px" width="728" margin="0 auto">
+                  <img src="./images/gallery pictures/classroom.jpg"height="510px" width="728" margin="0 auto">
                 </h1>
             </div>
             <div class="slide">
                 <h1 class="slide-number">
-                    <img src="./images/gallery pictures/classroom.jpg" height="510px" width="728" margin="0 auto">
+                    <img src="./images/gallery pictures/last.jpg" height="510px" width="728" margin="0 auto">
                 </h1>
-          
-            <div class="mySlides">
-              <div class="numbertext">2 / 6</div>
-              <img src="../SquadGoalsECD/images/gallery pictures/classroom inside.jfif" style="width:100%">
-            </div>
-          
-            <div class="mySlides">
-              <div class="numbertext">3 / 6</div>
-              <img src="../SquadGoalsECD/images/gallery pictures/dining.jfif" style="width:100%">
             </div>
             <div class="slide">
                 <h1 class="slide-number">
-                <img src="./images/gallery pictures/daycare outside.jfif" height="510px" width="728" margin="0 auto">
+                <img src="./images/gallery pictures/preschools.jpg" height="510px" width="728" margin="0 auto">
                 </h1>
             </div>
+            <div class="slide">
+                <h1 class="slide-number">
+                <img src="./images/gallery pictures/PRESCHOOL.jpg" height="510px" width="728" margin="0 auto">
+                </h1>
+            </div>   
         </div>
     </div>
-</body>
+</body> 
 </html>
-         

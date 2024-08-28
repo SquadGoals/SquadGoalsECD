@@ -360,9 +360,12 @@ a{
 }
 
 .contact-details {
-  background-color: rgb(5, 233, 5);
+  background-color:orangered;
   padding: 20px;
   border-radius: 8px;
+  color:white;
+}
+.i{
   color:white;
 }
 
@@ -436,7 +439,7 @@ a{
 }
 
 .pp-submit-button {
-  background-color: #ff5722;
+  background-color:orangered;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -447,7 +450,7 @@ a{
 }
 
 .pp-submit-button:hover {
-  background-color: #e64a19;
+  background-color:#ff5722;
 }
 .pp-input-group .pp-checkbox
 .pp-input-required{
