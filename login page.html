@@ -29,6 +29,7 @@
 <div class = "form-box">
 <!--LOGIN FORM-->
 <div class = "login-container" id = "login">
+<form id = "loginForm" onsubmit = "return validateLogin(event)">
 <div class = "top">
 <span>Don't have an account?<a href = "#" onclick = "register()">Sign Up</a></span>
 <header>Login</header>
@@ -36,10 +37,12 @@
 <div class = "input-box">
 <input type = "text" class = "input-field" placeholder="Username or Email">
 <i class = "bx bx-user"></i>
+<span class = "error" id = "loginUsernameError"></span>
 </div>
 <div class = "input-box">
 <input type = "password" class = "input-field" placeholder="Password">
 <i class = "bx bx-lock-alt"></i>
+<span class = "error" id = "loginPasswordError"></span>
 </div>
 <div class = "input-box">
 <input type = "submit" class = "submit" value = "Sign In">
@@ -53,30 +56,40 @@
 <label><a href = "#">| Forgot Password?</a></label>
 </div>
 </div>
+</form>
 </div>
 <!--REGISTRATION FORM-->
 <div class = register-container id = "register">
+<form id = "registerForm" onsubmit = "return validateRegister(event)">
 <div class = "top">
 <span>Have an account? <a href = "#" onclick="login()">Login</a></span>
 <header>SIGN UP</header>
 </div>
 <div class = "two-forms">
 <div class = "input-box">
-<input type = "text" class = "input-field" placeholder="Firstname">
+<input type = "text" class = "input-field" id = "registerFirstname" placeholder="Firstname">
 <i class = "bx bx-user"></i>
+<span class = "error" id = "registerFirstnameError">
+</span>
 </div>
 <div class = "input-box">
-<input type = "text" class = "input-field" placeholder="Lastname">
+<input type = "text" class = "input-field" id = "registerLastname" placeholder="Lastname">
 <i class = "bx bx-user"></i>
+<span class = "error" id = "registerLastnameError">
+</span>
 </div>
 </div>
 <div class = "input-box">
-<input type = "text" class = "input-field" placeholder="Email">
+<input type = "text" class = "input-field" id = "registerEmail" placeholder ="Email">
 <i class = "bx bx-envelope"></i>
+<span class = "error" id = "registerEmailError">   
+</span>
 </div>
 <div class = "input-box">
-<input type = "password" class = "input-field" placeholder="Password">
+<input type = "password" class = "input-field" id = "registerPassword" placeholder ="Password">
 <i class = "bx bx-lock-alt"></i>
+<span class = "error" id = "registerPasswordError">
+</span>
 </div>
 <div class = "input-box">
 <input type = "submit" class = "submit" value = "Register">
@@ -93,6 +106,67 @@
 </div>
 </div>
 </div>
+</form>
+<script>
+function validateLogin(event){
+var username = document.getElementById('loginUsername').value;
+var password = document.getElementById('loginPassword').value;
+var isValid = true;
+
+document.getElementById('loginUsernameError').innerHTML = '';
+document.getElementById('loginPasswordError').innerHTML = '';
+
+if (username === "") {
+document.getElementById('loginUsernameError') .innerHTML = "Username or Email is required";
+isValid = false;
+}
+
+if (password === "") {
+document.getElementById('loginPasswordError') .innerHTML = "Password is required";
+isValid = false;
+}
+
+if(!isValid){
+event.preventDefault();
+}
+return isValid;
+}
+
+function validateRegister(event){
+var firstName = document.getElementById('registerFirstname').value;
+var lastName = document.getElementById('registerLastname').value;
+var email = document.getElementById('registerEmail').value;
+var password = document.getElementById('registerPassword').value;
+
+if (firstName === "") {
+document.getElementById('registerFirstnameError').innerHTML = "Firstname is required";
+isValid = false;
+}
+
+if (lastName === "") {
+document.getElementById('registerLastnameError').innerHTML = "Lastname is required";
+isValid = false;
+}
+var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (email === "") {
+document.getElementById('registerEmailError').innerHTML = "Email is required";
+isValid = false;}
+else if (!emailPattern.test(email)){
+document.getElementById('registerEmailError').innerHTML = "Please enter a valid email address";
+isValid = false;
+}
+
+if (password === "") {
+document.getElementById('registerPasswordError').innerHTML = "Password is required";
+isValid = false;
+}
+else if (password.length <6){
+document.getElementById('registerPasswordError').innerHTML = "Password must be atleast 6 characters long";
+isValid = false;
+}
+
+}
+</script>
 <script>
 function myMenuFunction(){
 var i = document.getElementById("navMenu");
@@ -102,6 +176,11 @@ i.className += "responsive";
 i.className = "nav-menu";
 }
 }
+if (!isValid) {
+    event.preventDefault(); 
+  }
+
+  return isValid;
 
 </script>
 <script>
@@ -363,5 +442,10 @@ padding: 0 20px;
 flex-direction: column;
 gap: 0;
 }
+}
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 </style>
