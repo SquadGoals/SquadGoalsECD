@@ -1,0 +1,60 @@
+.input-control {
+    display: flex;
+    flex-direction: column;
+}
+
+#form {
+   
+    border-radius: 4px;
+    
+}
+
+.input-control input {
+    border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-size: 18px;
+	padding: 10px;
+	width: 100%;
+}
+
+.input-control textarea {
+    border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-size: 18px;
+	padding: 10px;
+	width: 100%;
+}
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.input-control textarea:focus {
+    outline: 0;
+}
+
+.input-control.success input {
+    border-color: green;
+}
+
+.input-control.success textarea {
+    border-color: green;
+}
+
+
+.input-control.error input {
+    border-color: orangered;
+}
+
+
+.input-control.error textarea {
+    border-color: orangered;
+}
+
+.input-control .error {
+    color: orangered;
+    font-size: 16px;
+    height: 13px;
+}
