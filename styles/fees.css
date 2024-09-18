@@ -96,21 +96,35 @@ width: 100%;
 }
 /*  fee Container */
 .fees{
- 
-    /* background-size:contain;
-    background-position: top right;
-    background-repeat: no-repeat;
-    height: 50vh;
-    width: 60vh;
-    -webkit-box-reflect: right; */
-    margin: 0; 
-    padding: 20px;
-    margin-top: 80px;
-   
+     margin: 0; 
+     background-image: url('../images/images/Fees/background.jpg');
+     background-position: right bottom, left top;
+     background-repeat: no-repeat, repeat;
+     background-size: cover;
+     height: 100%; 
+     width: 100%; 
+    font-size: 24px;
     
-    
+}
+.fees-Info{
+    text-align: center bottom;
+    text-indent:  10px;
+    direction: ltr;
+    color:black;
+    top:50;
+    text-align: center;
+  
 
 }
+/* .img{
+    background-size:contain;
+    background-position: top right;
+    background-repeat: no-repeat;
+    height: 30vh;
+    width: 100vh;
+    -webkit-box-reflect: right; 
+    float: right;
+} */
 
 .fees-container{
     display: flex;
@@ -127,4 +141,80 @@ width: 100%;
     min-height: 60px; 
     border: orange;
     border-style: double;
+    font-family: sans-serif;
+}
+.align{
+  text-align: left;
+  direction: ltr;
+  color:black;
+  font-size: smaller;
+ 
+}
+.fees-title{
+  font-size:20px;
+  text-align:left;
+  font-family: cursive;
+}
+.Extra{
+  background-color:white;
+  padding: 20px;
+}
+h2{
+  text-align: center;
+  font-size:medium
+}
+.image{
+  /* size-adjust: 20px; */
+  max-width: 50px;
+  height: auto;
+  border-radius:0%;
+  margin-top: 10px;
+  align-items: center;
+}
+/* .p{
+  text-align: center;
+} */
+.icons-container{
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+  gap: 20px; 
+}
+article h2 a,
+article h2 a:link,
+article h2 a:visited,
+article h2 a:hover,
+article h2 a:focus,
+article h2 a:active {
+  text-decoration: none;
+  color: #000;
+}
+article {
+  flex: 1 0 10em;
+  margin: 0.5em 1em;
+  
+
+}
+
+
+.clickablecard:hover {
+  cursor: pointer;
+}
+
+.clickablecard:hover p {
+  color: #00d;
+}
+
+.clickablecard:hover p a {
+  color: #000;
+}
+
+
+article h2 a:hover,
+article h2 a:focus,
+.clickablecard:hover .cardmainlink {
+  text-decoration: underline;
+  text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+  color: #00d;
 }

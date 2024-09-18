@@ -18,8 +18,8 @@
 
 </div>
 <div class = "nav-button">
-<button class = "btn white-btn" id = "loginBtn"onclick="register()">Sign In</button>
-<button class = "btn" id = "registerBtn"onclick="register()">Sign Up</button> 
+<!-- <button class = "btn white-btn" id = "loginBtn"onclick="register()">Sign In</button>
+<button class = "btn" id = "registerBtn"onclick="register()">Sign Up</button>  -->
 </div>
 <div class = "nav-menu-btn">
 <i class = "bx bx-menu" onclick = "myMenuFunction()"></i>
@@ -31,8 +31,8 @@
 <div class = "login-container" id = "login">
 <form id = "loginForm" onsubmit = "return validateLogin(event)">
 <div class = "top">
-<span>Don't have an account?<a href = "#" onclick = "register()">Sign Up</a></span>
-<header>Login</header>
+
+<header class="login">Login</header>
 </div>
 <div class = "input-box">
 <input type = "text" class = "input-field" placeholder="Username or Email">
@@ -55,6 +55,7 @@
 <div class = "two">
 <label><a href = "#">| Forgot Password?</a></label>
 </div>
+<span>Don't have an account?<a href = "#" onclick = "register()">Sign Up</a></span>
 </div>
 </form>
 </div>
@@ -62,7 +63,7 @@
 <div class = register-container id = "register">
 <form id = "registerForm" onsubmit = "return validateRegister(event)">
 <div class = "top">
-<span>Have an account? <a href = "#" onclick="login()">Login</a></span>
+
 <header>SIGN UP</header>
 </div>
 <div class = "two-forms">
@@ -102,6 +103,7 @@
 <div class = "two">
 <label><a href = "#">Terms & Conditions</a></label>
 </div>
+<span>Have an account? <a href = "#" onclick="login()">Login</a></span>
 </div>
 </div>
 </div>
@@ -215,14 +217,16 @@ y.style.opacity = 1;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: cursive;
+   
     
 }
 body{
-background: url();
+background: url('./images/images/Fees/preschool.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed;
+filter:blur(10%);
 }
 .wrapper{
 display: flex;
