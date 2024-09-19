@@ -110,7 +110,7 @@ width: 100%;
     text-align: center bottom;
     text-indent:  10px;
     direction: ltr;
-    color:black;
+    color:orange;
     top:50;
     text-align: center;
   
@@ -156,6 +156,7 @@ padding:20px;
   text-align: center;
   font-size:medium;
   margin-bottom: 20px;
+  color:black;
 }
 .icons-container{
   /* display: flex;
