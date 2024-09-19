@@ -5,17 +5,31 @@
  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css ">
     <link rel="stylesheet" href="Homepage.css"link>
+    <link rel="stylesheet" href="validationStyle.css"link>
+   
     <style>
         * body{font-family: cursive;}
        h1{text-align: center;  font-size: 60PX; color: orange;}
        .copyright{background-color: orange;
+        .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
 
        }
     </style>
+    <head>
+        <script  defer src="ValidationContact.js"></script>
+     
+
+        
+    </head>
+    
     <header>
         <nav id="navbar" class="">
             <div class="nav-wrapper">
-              <!-- Navbar Logo -->
+              <!-- Navbar Logo -->  
               <div class="logo">
                 <!-- Logo  -->
                 <a href="#home"><img width="100px" height="50px" src="./images/images/HomeImages/3.png"></a>
@@ -65,40 +79,108 @@
         
                 <!-- Right Section: Contact Form -->
                 <div class="footer-right">
-                    <form class="pp-contact-form pp-form-stacked">
-                        <input type="hidden" name="fl-layout-id" value="86" />
+
+                    <form id="form" action="/" class="pp-contact-form pp-form-stacked">
+                   
+                        <h1 style="font-size: large; font-weight: bold; color: orangered;">Have a question?</h1>
+                        <!--name validation bellow-->
+                        <div class="pp-input-group pp-name pp-input-required" >
+                        <div class="input-control">
+                            
+                            <input id="username" name="username" type="text" placeholder="Name">
+                            <div class="error"></div>
+                        </div>
+                        </div>
+
+                         <!--email validation bellow-->
+                        <div class="pp-input-group pp-name pp-input-required" >
+                            <div class="input-control">
+                                
+                                <input id="email" name="email" type="text" placeholder="Email">
+                                <div class="error"></div>
+                            </div>
+                            </div>
+
+                            <!--message  validation bellow-->
+                            <div class="pp-input-group pp-name pp-input-required" >
+                                <div class="input-control">
+                                    
+                                    <textarea id="messagebox" name="messagebox" type="text" placeholder="Message"></textarea>
+                                    <div class="error"></div>
+                                </div>
+                                </div>
+
+
+                       <!--submit button  bellow-->
+                         <div class="pp-button-wrap fl-button-wrap">
+                            <button type="submit" class="fl-button pp-submit-button">
+                                
+                                <span class="fl-button-text">SEND</span>
+                            </button>
+                        </div> 
+                
+                    </form>
+
+
+
+
+
+
+
+               
+                
+                    
+                    
+                    
+                    <!--      <form class="pp-contact-form pp-form-stacked" id="form" action="/"  >
+                    
                         <div class="pp-contact-form-inner pp-clearfix">
-                            <div class="pp-input-group pp-name pp-input-required">
-                                <!-- <span class="pp-contact-error">Please enter your name.</span> -->
-                                <input type="text" name="pp-name" id="pp-name-5fb260d38e586" value="" placeholder="Name" />
+                            <div class="pp-input-group pp-name pp-input-required" >
+                     
+                                <input type="text" name="username" id="username" value="" placeholder="Name" />
+                                <div class="error"></div>
                             </div>
         
                             <div class="pp-input-group pp-email pp-input-required">
-                                <!-- <span class="pp-contact-error">Please enter a valid email address.</span> -->
-                                <input type="email" name="pp-email" id="pp-email-5fb260d38e586" value="" placeholder="Email" />
+                         
+                                <input id="email" name="email" type="text" placeholder="Email">
+                                <div class="error"></div>
                             </div>
         
                             <div class="pp-input-group pp-message pp-input-required">
-                                <!-- <span class="pp-contact-error">Please type your message.</span> -->
-                                <textarea name="pp-message" id="pp-message-5fb260d38e586" placeholder="Your Message"></textarea>
+                           
+                                <textarea name="message" id="email" placeholder="Your Message"></textarea>
+                              
                             </div>
                         </div>
         
                         <div class="pp-input-group pp-checkbox pp-input-required">
-                            <input type="checkbox" name="pp-checkbox" id="pp-checkbox_5fb260d38e586" value="1" />
+                            <input type="checkbox" name="agree" id="agree" value="1" />
                             <label for="pp-checkbox_5fb260d38e586">I agree to be contacted via email</label>
-                            <span class="pp-contact-error">Please check this field.</span>
+                            <span id="agree-error" class="error-message"></span>
+
                         </div>
                         
         
-                        <div class="pp-button-wrap fl-button-wrap">
+                    <div class="pp-button-wrap fl-button-wrap">
                             <button type="submit" class="fl-button pp-submit-button">
+                                
                                 <span class="fl-button-text">SEND</span>
                             </button>
-                        </div>
+                        </div> 
+
         
-                        <span class="pp-send-error" style="display:none;">Message failed. Please try again.</span>
+                      
+                  
+                       
+<br>
+<span id="error"></span>
+                        
                     </form>
+ -->
+            
+                
+                   
                 </div>
             </div>
         </footer>
