@@ -4,90 +4,84 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>SmallSteps Pre-School</title>
         <link rel="stylesheet" href="./styles/pay.css" link>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <script src="./styles/JavaScript/pay.js"></script>
-
-    </head>
-
-<body>
-	<!-- <section>
-		<header>
-			<img src="./images/images/Fees/background.jpg"alt="">
-		</header>
-	</section> -->
-    <div class="container">
-		<div class="left">
-			<p>Payment methods</p>
-			<hr style="border:1px solid orange; margin: 0 15px;">
-			<div class="methods">
-				<div onclick="doFun()" id="tColorA" style="color: greenyellow;"><i class="fa-solid fa-credit-card" style="color: greenyellow;"></i> Payment by card</div>
-				<div onclick="doFunA()" id="tColorB" ><i class="fa-solid fa-building-columns"></i> Internet banks</div>
-				<div onclick="doFunB()" id="tColorC" ><i class="fa-solid fa-wallet"></i> Apple/Google pay</div>
-			</div>
-			<hr style="border:1px solid orange; margin: 0 15px;">
-		</div>
-		<div class="center">
-			<img src="./images/images/Fees/card_img.png" alt="" class="img">
-			<hr style="border:1px solid orange ; margin: 0 15px;">
-
-			<div class="card-details">
-				<form>
-					<p>Card number</p>
-					<div class="c-number" id="c-number">
-						<input id="number" class="cc-number" placeholder="Card number" maxlength="19" required>
-						<i class="fa-solid fa-credit-card" style="margin: 0;"></i>
-					</div>
-
-					<div class="c-details">
-						<div>
-							<p>Expiry date</p>
-							<input id="e-date" class="cc-exp" placeholder="MM/YY" required maxlength="5" required>
-						</div>
-						<div>
-							<p>CVV</p>
-							<div class="cvv-box" id="cvv-box">
-								<input id="cvv" class="cc-cvv" maxlength="3" placeholder="CVV">
-								<i class="fa-solid fa-circle-question" title="3 digits on the back of the card" style="cursor: pointer;"></i>
-							</div>
-						</div>
-					</div>
-					<div class="email">
-						<p>Email</p>
-						<input type="email" placeholder="example@email.com" id="email" required>
-					</div>
-					<button class="btn">PAY NOW</button>
-				</form>
-			</div>
-		</div>
-
  
-		<div class="right">
-			<p>Order information</p>
-			<hr style="border:1px solid orange ; margin: 0 15px;">
-			<div class="details">
-				<div style="font-weight: bold; padding: 3px 0;">Payment</div>
-				<div style="padding: 3px 0;"></div>
-			</div>
-			<hr style="border:1px solid orange; margin: 0 15px;">
-			<img src="./images/images/Fees/card_img.png" alt="" clas="img">
-		</div> 
+    </head>
+ 
+<body>
+    <div class="container">
+       
+        <div class="center">
+			<p>Payment</p>
+            <hr style="border:1px solid orange ; margin: 0 15px;">
+ 
+            <div class="card-details">
+                <form>
+                    <p>Card number</p>
+                    <div class="c-number" id="c-number">
+                        <input id="number" class="cc-number" placeholder="Card number" maxlength="19" required>
+                        <i class="fa-solid fa-credit-card" style="margin: 0;"></i>
+                    </div>
+ 
+                    <div class="c-details">
+                        <div>
+                            <p>Expiry date</p>
+                            <input id="e-date" class="cc-exp" placeholder="MM/YY" required maxlength="5" required>
+                        </div>
+                        <div>
+                            <p>CVV</p>
+                            <div class="cvv-box" id="cvv-box">
+                                <input id="cvv" class="cc-cvv" maxlength="3" placeholder="CVV">
+                                <i class="fa-solid fa-circle-question" title="3 digits on the back of the card" style="cursor: pointer;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="email">
+                        <p>Email</p>
+                        <input type="email" placeholder="example@email.com" id="email" required>
+                    </div>
+                    <!-- <button class="btn"  id="submit" onclick="payment()">PAY NOW</button> -->
+					<form id="payment-form" action="/process-payment" method="post">
+						<button class="btn" id="submit">PAY NOW</button>
+					  </form>
+                </form>
+            </div>
+        </div>
+		<!-- <button onclick="myFunction()">Try it</button>
+
+		<script>
 		
-	</div>
-	<script>
-		
+  -->
+        <div class="right">
+            <p>Order information</p>
+            <hr style="border:1px solid orange ; margin: 0 15px;">
+            <div class="details">
+                <div style="font-weight: bold; padding: 3px 0;">Payment</div>
+                <div style="padding: 3px 0;"></div>
+            </div>
+            <hr style="border:1px solid orange; margin: 0 15px;">
+            <img src="./images/images/Fees/card_img.png" alt="" clas="img">
+        </div>
+       
+    </div>
+    <script>
+       
  window.onload = function() {
         let cvv = document.getElementById('cvv');
         let cvvBox = document.getElementById('cvv-box');
         let eDate = document.getElementById('e-date');
         let number = document.getElementById('number');
-		cDetails = document.querySelector('.card-details');
+        cDetails = document.querySelector('.card-details');
+	
 
-
-
+ 
+ 
+ 
     let cNumber = document.getElementById('number');
 cNumber.addEventListener('keyup', function(e){
  let num = cNumber.value;
-
+ 
  let newValue = '';
  num = num.replace(/\s/g, '');
  for(var i = 0; i < num.length; i++) {
@@ -95,8 +89,8 @@ cNumber.addEventListener('keyup', function(e){
   newValue = newValue.concat(num[i]);
   cNumber.value = newValue;
   }
-
-
+ 
+ 
  let ccNum = document.getElementById('c-number');
  if(num.length<16){
   ccNum.style.border="1px solid red";
@@ -105,37 +99,45 @@ cNumber.addEventListener('keyup', function(e){
   ccNum.style.border="1px solid greenyellow";
  }
 }),
-
+ 
         cvv.addEventListener('keyup', function() {
             let elen = cvv.value;
             cvvBox.style.border = elen.length < 3 ? "1px solid red" : "1px solid greenyellow";
         });
-
+ 
         eDate.addEventListener('keyup', function(e) {
-            if (e.which !== 8) { 
+            if (e.which !== 8) {
                 if (eDate.value.length === 2) {
                     eDate.value += '/';
                 }
             }
             eDate.style.border = eDate.value.length < 5 ? "1px solid red" : "1px solid greenyellow";
         });
-
+ 
         number.addEventListener('input', function() {
             this.value = this.value.replace(/[^0-9]/g, '');
         });
-
+ 
         cvv.addEventListener('input', function() {
-            this.value = this.value.replace(/[^0-9]/g, ''); 
+            this.value = this.value.replace(/[^0-9]/g, '');
         });
-        
-        document.getElementById('payment-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-          
-            alert('Payment processed!');
-        });
-    };
 
-	</script>
+
+document.getElementById('payment-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Payment processed!');
+});
+
+document.getElementById('submit').addEventListener('click', function(e) {
+  e.preventDefault();
+  alert('Payment processed!');
+});
+        
+    };
+ 
+    </script>
 </body>
 </html>
+ 
+ 
 

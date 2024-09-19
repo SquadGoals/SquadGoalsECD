@@ -20,7 +20,7 @@ body{
 	border: 3px solid orange;
 	border-radius: 7px;
 	height: 80%;
-	border-color: orange;
+	/* border-color: orange; */
 	
 }
 .left{
@@ -73,7 +73,10 @@ body{
 	justify-content: center;
 	align-items: center;
 }
-/* .right{
+.center p{
+	text-align: center;
+} 
+.right{
 	width: 25%;
 }
 .right p{
@@ -94,7 +97,7 @@ body{
 	align-items: center;
 	justify-content: center;
 	padding: 15px;
-} */
+} 
 .card-details{
 	padding: 20px 80px;
 }
