@@ -29,7 +29,7 @@ button {
    box-sizing: border-box;
 }
 #result{
-    color: orange;
+    color: white;
     font-weight: 900;
 }
 
@@ -55,7 +55,14 @@ h2{
     color: orange;
     text-transform: uppercase;
 }
-
+.card{
+    float: left ;
+    margin: top 200px;
+    padding-right: 0cqh;
+    background-color: orange;
+    color: antiquewhite;
+    font-weight: 900;
+}
 
 
         </style>
@@ -63,7 +70,17 @@ h2{
 
     <body>
         <h1 style="text-align: center  ; color: orange; text-transform: uppercase;">Our fees Calculation</h1>
+        <div class="card">
 
+            <div id="result">
+                <p id="answer" ></P>
+               </div>
+               <br>
+               <div id="result2">
+                <p id="answer" ></P>
+               </div>
+
+        </div>
         <form id="itemForm">
             <div id="months1">
                 <h3>1-6 months</h3>
@@ -132,14 +149,12 @@ h2{
            
             <button type="button" id="calculateBtn" >  Calculate fees</button>
         </form>
+
+        
+        
+    </div>
 <br>
 <br>
-        <div id="result">
-            <p id="answer" ></P>
-           </div>
-           <br>
-           <div id="result2">
-            <p id="answer" ></P>
-           </div>
+        
     </body>
 </html>
