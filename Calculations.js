@@ -68,4 +68,5 @@ var weekend3 = ["weekend3"];
  
  // Add event listener to the button
  document.getElementById('calculateBtn').addEventListener('click', total);
+ 
 
