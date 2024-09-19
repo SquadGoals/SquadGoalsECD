@@ -33,6 +33,7 @@ var weekend3 = ["weekend3"];
      // Initialize total price
      let totalPrice = 0;
  
+ 
    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
  
      checkboxes.forEach(checkbox => {
@@ -57,10 +58,12 @@ var weekend3 = ["weekend3"];
                 totalPrice += cost.weekend3;
             }
          }
+
      });
- 
+     let yearTotal = totalPrice * 12;
      // Display the total price
      document.getElementById('result').textContent = `Total Price: R${totalPrice.toFixed(2)}`;
+     document.getElementById('result2').textContent = `Total Year: R${yearTotal.toFixed(2)}`;
  }
  
  // Add event listener to the button
