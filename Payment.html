@@ -69,12 +69,14 @@
         let eDate = document.getElementById('e-date');
         let number = document.getElementById('number');
         cDetails = document.querySelector('.card-details');
+        const paymentForm = document.getElementById('payment-form');
+        const submitButton = document.getElementById('submit');
 	
 
  
  
  
-    let cNumber = document.getElementById('number');
+let cNumber = document.getElementById('number');
 cNumber.addEventListener('keyup', function(e){
  let num = cNumber.value;
  
@@ -90,6 +92,7 @@ cNumber.addEventListener('keyup', function(e){
  let ccNum = document.getElementById('c-number');
  if(num.length<16){
   ccNum.style.border="1px solid red";
+  return 'Please enter 16 numbers!';
  
  }else{
   ccNum.style.border="1px solid greenyellow";
@@ -101,14 +104,51 @@ cNumber.addEventListener('keyup', function(e){
             cvvBox.style.border = elen.length < 3 ? "1px solid red" : "1px solid greenyellow";
         });
  
-        eDate.addEventListener('keyup', function(e) {
-            if (e.which !== 8) {
-                if (eDate.value.length === 2) {
-                    eDate.value += '/';
-                }
+        // eDate.addEventListener('keyup', function(e) {
+        //     if (e.which !== 8) {
+        //         if (eDate.value.length === 2) {
+        //             eDate.value += '/';
+        //         }
+                
+        //     }
+        //     eDate.style.border = eDate.value.length < 5 ? "1px solid red" : "1px solid greenyellow";
+        // });
+        //month and year validation in javascript//
+
+
+        // check validation of values//
+
+eDate.addEventListener('keyup', function(e) {
+   
+    if (e.which !== 8) {
+   
+        if (eDate.value.length === 2) {
+            eDate.value += '/';
+        }
+        
+        // Validate the date format (MM/YY)
+        const dateParts = eDate.value.split('/');
+        if (dateParts.length === 2) {
+            const month = parseInt(dateParts[0], 10);
+            const year = parseInt(dateParts[1], 10);
+            
+            // Check month and year validity
+            if (month < 1 || month > 12) {
+                eDate.style.border = "1px solid red";
+            } else if (year < 20 || year > 30) {
+                eDate.style.border = "1px solid red"; 
+            } else {
+                eDate.style.border = "1px solid greenyellow";
             }
+        } else {
             eDate.style.border = eDate.value.length < 5 ? "1px solid red" : "1px solid greenyellow";
-        });
+        }
+    } else {
+   
+        eDate.style.border = eDate.value.length < 5 ? "1px solid red" : "1px solid greenyellow";
+    }
+});
+
  
         number.addEventListener('input', function() {
             this.value = this.value.replace(/[^0-9]/g, '');
@@ -118,14 +158,23 @@ cNumber.addEventListener('keyup', function(e){
             this.value = this.value.replace(/[^0-9]/g, '');
         });
 
-
-
-document.getElementById('submit').addEventListener('click', function(e) {
-  e.preventDefault();
-  alert('Payment processed!');
-});
         
-    };
+//     payment-form.addEventListener('submit', e => {
+//     e.preventDefault();
+//     keyup();
+//     input();
+// });
+
+// if(Submit === check){
+//     alert('Payment processed!');
+// }
+ document.getElementById('submit').addEventListener('click', function(e) {
+ e.preventDefault();
+  alert('Payment processed!');
+ });
+        
+     };
+  
  
     </script>
 </body>
