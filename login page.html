@@ -10,16 +10,11 @@
 </head>
 <body>
 <div class = "wrapper">
+  <div class="overlay"></div> 
 <nav class = "nav">
 <div class = "nav-logo">
-
 </div>
 <div class = "nav-menu" id = "navMenu">
-
-</div>
-<div class = "nav-button">
-<!-- <button class = "btn white-btn" id = "loginBtn"onclick="register()">Sign In</button>
-<button class = "btn" id = "registerBtn"onclick="register()">Sign Up</button>  -->
 </div>
 <div class = "nav-menu-btn">
 <i class = "bx bx-menu" onclick = "myMenuFunction()"></i>
@@ -30,22 +25,23 @@
 <!--LOGIN FORM-->
 <div class = "login-container" id = "login">
 <form id = "loginForm" onsubmit = "return validateLogin(event)">
+ 
 <div class = "top">
 
-<header class="login">Login</header>
+<header class="login">LOGIN</header>
 </div>
 <div class = "input-box">
-<input type = "text" class = "input-field" placeholder="Username or Email">
+<input type = "text" class = "input-field" id = "loginUsername" placeholder="Username or Email">
 <i class = "bx bx-user"></i>
 <span class = "error" id = "loginUsernameError"></span>
 </div>
 <div class = "input-box">
-<input type = "password" class = "input-field" placeholder="Password">
+<input type = "password" class = "input-field" id = "loginPassword" placeholder="Password">
 <i class = "bx bx-lock-alt"></i>
 <span class = "error" id = "loginPasswordError"></span>
 </div>
 <div class = "input-box">
-<input type = "submit" class = "submit" value = "Sign In">
+<input type = "submit" class = "submit" value = "Sign In" >
 </div>
 <div class = "two-col">
 <div class = "one">
@@ -110,31 +106,36 @@
 </div>
 </form>
 <script>
-function validateLogin(event){
-var username = document.getElementById('loginUsername').value;
-var password = document.getElementById('loginPassword').value;
-var isValid = true;
+function validateLogin(event) {
+    var username = document.getElementById('loginUsername').value;
+    var password = document.getElementById('loginPassword').value;
+    var isValid = true;
 
-document.getElementById('loginUsernameError').innerHTML = '';
-document.getElementById('loginPasswordError').innerHTML = '';
+    document.getElementById('loginUsernameError').innerHTML = '';
+    document.getElementById('loginPasswordError').innerHTML = '';
 
-if (username === "") {
-document.getElementById('loginUsernameError') .innerHTML = "Username or Email is required";
-isValid = false;
-}
+    if (username === "") {
+        document.getElementById('loginUsernameError').innerHTML = "Username or Email is required";
+        isValid = false;
+    }
 
-if (password === "") {
-document.getElementById('loginPasswordError') .innerHTML = "Password is required";
-isValid = false;
-}
+    if (password === "") {
+        document.getElementById('loginPasswordError').innerHTML = "Password is required";
+        isValid = false;
+    }
 
-if(!isValid){
-event.preventDefault();
-}
-return isValid;
+    if (isValid) {
+        
+        window.location.href = "../SquadGoalsECD/Homepage.html";
+    } else {
+        event.preventDefault(); 
+    }
+
+    return isValid;
 }
 
 function validateRegister(event){
+var isValid = true;
 var firstName = document.getElementById('registerFirstname').value;
 var lastName = document.getElementById('registerLastname').value;
 var email = document.getElementById('registerEmail').value;
@@ -163,7 +164,7 @@ document.getElementById('registerPasswordError').innerHTML = "Password is requir
 isValid = false;
 }
 else if (password.length <6){
-document.getElementById('registerPasswordError').innerHTML = "Password must be atleast 6 characters long";
+document.getElementById('registerPasswordError').innerHTML = "Password must be atleast 8 characters long";
 isValid = false;
 }
 }
@@ -212,6 +213,20 @@ y.style.opacity = 1;
 </html>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); 
+    z-index: 1; 
+    pointer-events: none; 
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -221,7 +236,7 @@ y.style.opacity = 1;
     
 }
 body{
-background: url('./images/images/Fees/preschool.jpg');
+background: url('/images/images/crayons-coloring-book-coloring-book-159579.webp');
 background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed;
@@ -369,7 +384,7 @@ cursor: pointer;
 transition: .3s ease-in-out;
 }
 .submit:hover{
-background: rgba(255,255,255,0.5);
+background: rgba(241, 97, 1, 0.795);
 box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
 }
 .two-col{
@@ -403,7 +418,6 @@ position: absolute;
 top: -800px;
 display: flex;
 justify-content: center;
-background: aquamarine;
 width: 100%;
 height: 90vh;
 backdrop-filter: blur(20px);
@@ -451,4 +465,6 @@ gap: 0;
   font-size: 12px;
   margin-top: 5px;
 }
+
+
 </style>
