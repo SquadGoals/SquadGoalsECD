@@ -11,23 +11,21 @@
  
 <body>
     <div class="container">
-       
         <div class="center">
-			<p>Payment</p>
+            <p>Payment</p>
             <hr style="border:1px solid orange ; margin: 0 15px;">
- 
             <div class="card-details">
-                <form>
+                <form id="payment-form">
                     <p>Card number</p>
                     <div class="c-number" id="c-number">
                         <input id="number" class="cc-number" placeholder="Card number" maxlength="19" required>
                         <i class="fa-solid fa-credit-card" style="margin: 0;"></i>
                     </div>
- 
+    
                     <div class="c-details">
                         <div>
                             <p>Expiry date</p>
-                            <input id="e-date" class="cc-exp" placeholder="MM/YY" required maxlength="5" required>
+                            <input id="e-date" class="cc-exp" placeholder="MM/YY" required maxlength="5">
                         </div>
                         <div>
                             <p>CVV</p>
@@ -41,150 +39,77 @@
                         <p>Email</p>
                         <input type="email" placeholder="example@email.com" id="email" required>
                     </div>
-                    <!-- <button class="btn"  id="submit" onclick="payment()">PAY NOW</button> -->
-					<form id="payment-form" action="/process-payment" method="post">
-						<button class="btn" id="submit">PAY NOW</button>
-					  </form>
+                    <button class="btn" id="submit" type="button">PAY NOW</button>
                 </form>
             </div>
         </div>
-	
+    
         <div class="right">
             <p>Order information</p>
-            <hr style="border:1px solid orange ; margin: 0 15px;">
+            <hr style="border:1px solid orange; margin: 0 15px;">
             <div class="details">
                 <div style="font-weight: bold; padding: 3px 0;">Payment</div>
-                <div style="padding: 3px 0;"></div>
+                <div id="payment-details" style="padding: 3px 0;"></div>
             </div>
             <hr style="border:1px solid orange; margin: 0 15px;">
-            <img src="./images/images/Fees/card_img.png" alt="" clas="img">
+            <img src="./images/images/Fees/card_img.png" alt="" class="img">
         </div>
-       
     </div>
+    
     <script>
-       
- window.onload = function() {
-        let cvv = document.getElementById('cvv');
-        let cvvBox = document.getElementById('cvv-box');
-        let eDate = document.getElementById('e-date');
-        let number = document.getElementById('number');
-        cDetails = document.querySelector('.card-details');
-        const paymentForm = document.getElementById('payment-form');
-        const submitButton = document.getElementById('submit');
-	
-
- 
- 
- 
-let cNumber = document.getElementById('number');
-cNumber.addEventListener('keyup', function(e){
- let num = cNumber.value;
- 
- let newValue = '';
- num = num.replace(/\s/g, '');
- for(var i = 0; i < num.length; i++) {
-  if(i%4 == 0 && i > 0) newValue = newValue.concat(' ');
-  newValue = newValue.concat(num[i]);
-  cNumber.value = newValue;
-  }
- 
- 
- let ccNum = document.getElementById('c-number');
- if(num.length<16){
-  ccNum.style.border="1px solid red";
-  return 'Please enter 16 numbers!';
- 
- }else{
-  ccNum.style.border="1px solid greenyellow";
- }
-}),
- 
-        cvv.addEventListener('keyup', function() {
-            let elen = cvv.value;
-            cvvBox.style.border = elen.length < 3 ? "1px solid red" : "1px solid greenyellow";
-        });
- 
-        // eDate.addEventListener('keyup', function(e) {
-        //     if (e.which !== 8) {
-        //         if (eDate.value.length === 2) {
-        //             eDate.value += '/';
-        //         }
-                
-        //     }
-        //     eDate.style.border = eDate.value.length < 5 ? "1px solid red" : "1px solid greenyellow";
-        // });
-        //month and year validation in javascript//
-
-
-        // check validation of values//
-
-eDate.addEventListener('keyup', function(e) {
-   
-    if (e.which !== 8) {
-   
-        if (eDate.value.length === 2) {
-            eDate.value += '/';
-        }
-        
-        // Validate the date format (MM/YY)
-        const dateParts = eDate.value.split('/');
-        if (dateParts.length === 2) {
-            const month = parseInt(dateParts[0], 10);
-            const year = parseInt(dateParts[1], 10);
-            
-            // Check month and year validity
-            if (month < 1 || month > 12) {
-                eDate.style.border = "1px solid red";
-            } else if (year < 20 || year > 30) {
-                eDate.style.border = "1px solid red"; 
-            } else {
-                eDate.style.border = "1px solid greenyellow";
+    window.onload = function() {
+        const cvv = document.getElementById('cvv');
+        const cvvBox = document.getElementById('cvv-box');
+        const eDate = document.getElementById('e-date');
+        const cNumber = document.getElementById('number');
+        const paymentDetails = document.getElementById('payment-details');
+    
+        cNumber.addEventListener('keyup', function() {
+            let num = cNumber.value.replace(/\s/g, '');
+            let newValue = '';
+            for (let i = 0; i < num.length; i++) {
+                if (i % 4 === 0 && i > 0) newValue += ' ';
+                newValue += num[i];
             }
-        } else {
-            eDate.style.border = eDate.value.length < 5 ? "1px solid red" : "1px solid greenyellow";
+            cNumber.value = newValue;
+    
+            const ccNum = document.getElementById('c-number');
+            ccNum.style.border = (num.length < 16) ? "1px solid red" : "1px solid greenyellow";
+        });
+    
+        cvv.addEventListener('keyup', function() {
+            cvvBox.style.border = (cvv.value.length < 3) ? "1px solid red" : "1px solid greenyellow";
+        });
+    
+        eDate.addEventListener('keyup', function() {
+            if (eDate.value.length === 2) eDate.value += '/';
+            const dateParts = eDate.value.split('/');
+            if (dateParts.length === 2) {
+                const month = parseInt(dateParts[0], 10);
+                const year = parseInt(dateParts[1], 10);
+                eDate.style.border = (month < 1 || month > 12 || year < 20 || year > 30) ? "1px solid red" : "1px solid greenyellow";
+            }
+        });
+    
+        document.getElementById('submit').addEventListener('click', function() {
+            updateOrderInformation();
+            alert('Payment processed!');
+        });
+    
+        function updateOrderInformation() {
+            if (eDate.value && cNumber.value && cvv.value && document.getElementById('email').value) {
+                paymentDetails.innerHTML = `
+                    <div>Date: ${eDate.value}</div>
+                    <div>Card Number: ${cNumber.value.replace(/.(?=.{4})/g, '*')}</div>
+                    <div>CVV: ${cvv.value.replace(/./g, '*')}</div>
+                    <div>Email: ${document.getElementById('email').value}</div>
+                `;
+            } else {
+                paymentDetails.innerHTML = '';
+            }
         }
-    } else {
-   
-        eDate.style.border = eDate.value.length < 5 ? "1px solid red" : "1px solid greenyellow";
-    }
-});
-    //when a user click letters or words on the date and month it must return error//
- 
-        number.addEventListener('input', function() {
-            this.value = this.value.replace(/[^0-9]/g, '');
-        });
- 
-        cvv.addEventListener('input', function() {
-            this.value = this.value.replace(/[^0-9]/g, '');
-        });
-
-     eDate.addEventListener('input', function() {
-    this.value = this.value.replace(/[^0-9/]/g, '');
-    const dateParts = this.value.split('/');
-    if (dateParts.length > 2 || (dateParts.length === 2 && dateParts[1].length > 2)) {
-        this.style.border = "1px solid red";
-    } else {
-        this.style.border = this.value.length < 5 ? "1px solid red" : "1px solid greenyellow";
-    }
-});
-
-// Limit inputs for number and cvv
-number.addEventListener('input', function() {
-    this.value = this.value.replace(/[^0-9]/g, '');
-});
-
-cvv.addEventListener('input', function() {
-    this.value = this.value.replace(/[^0-9]/g, '');
-});
-//submit//
- document.getElementById('submit').addEventListener('click', function(e) {
- e.preventDefault();
-  alert('Payment processed!');
- });
-};
-  
- 
-</script>
+    };
+    </script>
 </body>
 </html>
  
