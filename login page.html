@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class = "wrapper">
-  <div class="overlay"></div> 
+<div class="overlay"></div> 
 <nav class = "nav">
 <div class = "nav-logo">
 </div>
@@ -105,33 +105,40 @@
 </div>
 </form>
 <script>
-function validateLogin(event) {
+ function validateLogin(event) {
     var username = document.getElementById('loginUsername').value;
     var password = document.getElementById('loginPassword').value;
     var isValid = true;
 
+    
     document.getElementById('loginUsernameError').innerHTML = '';
     document.getElementById('loginPasswordError').innerHTML = '';
 
+    
     if (username === "") {
-        document.getElementById('loginUsernameError').innerHTML = "Username or Email is required";
+        document.getElementById('loginUsernameError').innerHTML = "username or email is required";
         isValid = false;
     }
 
     if (password === "") {
-        document.getElementById('loginPasswordError').innerHTML = "Password is required";
+        document.getElementById('loginPasswordError').innerHTML = "password is required";
         isValid = false;
     }
 
-    if (isValid) {
-        
-        window.location.href = "../SquadGoalsECD/Homepage.html";
+    
+    if (!isValid) {
+        event.preventDefault();
     } else {
-        event.preventDefault(); 
+    
+        window.location.href ="../SquadGoalsECD/Homepage.html" ;  
     }
 
     return isValid;
 }
+
+
+    
+
 
 function validateRegister(event){
 var isValid = true;
@@ -141,29 +148,29 @@ var email = document.getElementById('registerEmail').value;
 var password = document.getElementById('registerPassword').value;
 
 if (firstName === "") {
-document.getElementById('registerFirstnameError').innerHTML = "Firstname is required";
+document.getElementById('registerFirstnameError').innerHTML = "firstname is required";
 isValid = false;
 }
 
 if (lastName === "") {
-document.getElementById('registerLastnameError').innerHTML = "Lastname is required";
+document.getElementById('registerLastnameError').innerHTML = "lastname is required";
 isValid = false;
 }
 var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 if (email === "") {
-document.getElementById('registerEmailError').innerHTML = "Email is required";
+document.getElementById('registerEmailError').innerHTML = "email is required";
 isValid = false;}
 else if (!emailPattern.test(email)){
-document.getElementById('registerEmailError').innerHTML = "Please enter a valid email address";
+document.getElementById('registerEmailError').innerHTML = "please enter a valid email address";
 isValid = false;
 }
 
 if (password === "") {
-document.getElementById('registerPasswordError').innerHTML = "Password is required";
+document.getElementById('registerPasswordError').innerHTML = "password is required";
 isValid = false;
 }
 else if (password.length <6){
-document.getElementById('registerPasswordError').innerHTML = "Password must be atleast 8 characters long";
+document.getElementById('registerPasswordError').innerHTML = "password must be atleast 8 characters long";
 isValid = false;
 }
 }
