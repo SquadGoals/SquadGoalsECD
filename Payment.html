@@ -148,7 +148,7 @@ eDate.addEventListener('keyup', function(e) {
         eDate.style.border = eDate.value.length < 5 ? "1px solid red" : "1px solid greenyellow";
     }
 });
-
+    //when a user click letters or words on the date and month it must return error//
  
         number.addEventListener('input', function() {
             this.value = this.value.replace(/[^0-9]/g, '');
@@ -158,25 +158,33 @@ eDate.addEventListener('keyup', function(e) {
             this.value = this.value.replace(/[^0-9]/g, '');
         });
 
-        
-//     payment-form.addEventListener('submit', e => {
-//     e.preventDefault();
-//     keyup();
-//     input();
-// });
+     eDate.addEventListener('input', function() {
+    this.value = this.value.replace(/[^0-9/]/g, '');
+    const dateParts = this.value.split('/');
+    if (dateParts.length > 2 || (dateParts.length === 2 && dateParts[1].length > 2)) {
+        this.style.border = "1px solid red";
+    } else {
+        this.style.border = this.value.length < 5 ? "1px solid red" : "1px solid greenyellow";
+    }
+});
 
-// if(Submit === check){
-//     alert('Payment processed!');
-// }
+// Limit inputs for number and cvv
+number.addEventListener('input', function() {
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
+
+cvv.addEventListener('input', function() {
+    this.value = this.value.replace(/[^0-9]/g, '');
+});
+//submit//
  document.getElementById('submit').addEventListener('click', function(e) {
  e.preventDefault();
   alert('Payment processed!');
  });
-        
-     };
+};
   
  
-    </script>
+</script>
 </body>
 </html>
  
