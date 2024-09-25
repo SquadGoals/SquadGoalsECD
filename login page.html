@@ -147,11 +147,6 @@ var lastName = document.getElementById('registerLastname').value;
 var email = document.getElementById('registerEmail').value;
 var password = document.getElementById('registerPassword').value;
 
-document.getElementById('regsiterFirstnameError').innerHTML = '';
-document.getElementById('registerLastnameError').innerHTML = '';
-document.getElementById('registerEmailError').innerHTML = '';
-document.getElementById('registerPasswordError').innerHTML = '';
-
 if (firstName === "") {
 document.getElementById('registerFirstnameError').innerHTML = "firstname is required";
 isValid = false;
@@ -178,14 +173,6 @@ else if (password.length <8){
 document.getElementById('registerPasswordError').innerHTML = "password must be atleast 8 characters long";
 isValid = false;
 }
-
-if (!isValid){
-event.preventDefault();
-} else {window.location.href ="../SquadGoalsECD/Homepage.html";
-
-}
-
-return isValid;
 }
 </script>
 <script>
@@ -230,9 +217,10 @@ y.style.opacity = 1;
 </script>
 </body>
 </html>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
 .overlay {
     position: fixed;
     top: 0;
