@@ -173,6 +173,10 @@ else if (password.length <8){
 document.getElementById('registerPasswordError').innerHTML = "password must be atleast 8 characters long";
 isValid = false;
 }
+
+if(!isValid) {
+event.preventDefault();
+}
 }
 </script>
 <script>
