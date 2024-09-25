@@ -187,7 +187,7 @@ padding:20px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-/* article h2 a,
+ article h2 a,
 article h2 a:link,
 article h2 a:visited,
 article h2 a:hover,
@@ -224,7 +224,7 @@ article h2 a:focus,
   text-decoration-skip: ink;
   text-decoration-skip-ink: auto;
   color: #00d;
-} */
+} 
 
 .icons-image{
   /* width: 10px;
