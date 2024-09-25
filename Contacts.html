@@ -1,11 +1,11 @@
-
-
 <!DOCTYPE html>
 <html>
  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css ">
     <link rel="stylesheet" href="Homepage.css"link>
     <link rel="stylesheet" href="validationStyle.css"link>
+    <link rel="stylesheet" href="./styles/Homepage.css"link>
+    <link rel="stylesheet" href="contactvalidationStyle.css"link>
    
     <style>
         * body{font-family: cursive;}
@@ -21,6 +21,7 @@
     </style>
     <head>
         <script  defer src="ValidationContact.js"></script>
+        <script  defer src="ContactValidation.js"></script>
      
 
         
@@ -83,6 +84,7 @@
                     <form id="form" action="/" class="pp-contact-form pp-form-stacked">
                    
                         <h1 style="font-size: large; font-weight: bold; color: orangered;">Have a question?</h1>
+                       <br>
                         <!--name validation bellow-->
                         <div class="pp-input-group pp-name pp-input-required" >
                         <div class="input-control">
@@ -111,6 +113,9 @@
                                 </div>
 
 
+                                <input type="checkbox" name="pp-checkbox" id="pp-checkbox_5fb260d38e586" value="" />
+                                <label for="pp-checkbox_5fb260d38e586">I agree to be contacted via email</label>
+                              
                        <!--submit button  bellow-->
                          <div class="pp-button-wrap fl-button-wrap">
                             <button type="submit" class="fl-button pp-submit-button">
@@ -120,6 +125,11 @@
                         </div> 
                 
                     </form>
+                </div>
+            </div>
+           </footer>
+    </body>
+</html>
 
 
 

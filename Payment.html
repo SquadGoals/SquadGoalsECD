@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Payment </title>
+        <link rel="stylesheet" href="./styles/pay.css" link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script src="./styles/JavaScript/pay.js"></script>
+ 
+    </head>
+ 
+<body>
+    <!-- <div class="container">
+        <div class="center">
+            <p>Payment</p>
+            <hr style="border:1px solid orange ; margin: 0 15px;">
+            <div class="card-details">
+                <form id="payment-form">
+                    <p>Card number</p>
+                    <div class="c-number" id="c-number">
+                        <input id="number" class="cc-number" placeholder="Card number" maxlength="19" required>
+                        <i class="fa-solid fa-credit-card" style="margin: 0;"></i>
+                    </div>
+    
+                    <div class="c-details">
+                        <div>
+                            <p>Expiry date</p>
+                            <input id="e-date" class="cc-exp" placeholder="MM/YY" required maxlength="5">
+                        </div>
+                        <div>
+                            <p>CVV</p>
+                            <div class="cvv-box" id="cvv-box">
+                                <input id="cvv" class="cc-cvv" maxlength="3" placeholder="CVV">
+                                <i class="fa-solid fa-circle-question" title="3 digits on the back of the card" style="cursor: pointer;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="email">
+                        <p>Email</p>
+                        <input type="email" placeholder="example@email.com" id="email" required>
+                    </div>
+                    <button class="btn" id="submit" type="button">PAY NOW</button>
+                </form>
+            </div>
+        </div>
+    
+        <div class="right">
+            <p>Order information</p>
+            <hr style="border:1px solid orange; margin: 0 15px;">
+            <div class="details">
+                <div style="font-weight: bold; padding: 3px 0;">Payment</div>
+                <div id="payment-details" style="padding: 3px 0;"></div>
+            </div>
+            <hr style="border:1px solid orange; margin: 0 15px;">
+            <img src="./images/images/Fees/card_img.png" alt="" class="img">
+        </div>
+    </div>
+    
+    <script>
+    window.onload = function() {
+        const cvv = document.getElementById('cvv');
+        const cvvBox = document.getElementById('cvv-box');
+        const eDate = document.getElementById('e-date');
+        const cNumber = document.getElementById('number');
+        const email = document.getElementById('email');
+        const emailInput = document.getElementById('email');
+        const paymentDetails = document.getElementById('payment-details');
+        
+    
+        cNumber.addEventListener('keyup', function() {
+            let num = cNumber.value.replace(/\s/g, '');
+            let newValue = '';
+            for (let i = 0; i < num.length; i++) {
+                if (i % 4 === 0 && i > 0) newValue += ' ';
+                newValue += num[i];
+            }
+            cNumber.value = newValue;
+    
+            const ccNum = document.getElementById('c-number');
+            ccNum.style.border = (num.length < 16) ? "1px solid red" : "1px solid greenyellow";
+        });
+    
+        cvv.addEventListener('keyup', function() {
+            cvvBox.style.border = (cvv.value.length < 3) ? "1px solid red" : "1px solid greenyellow";
+        });
+    
+        eDate.addEventListener('keyup', function() {
+            if (eDate.value.length === 2) eDate.value += '/';
+            const dateParts = eDate.value.split('/');
+            if (dateParts.length === 2) {
+                const month = parseInt(dateParts[0], 10);
+                const year = parseInt(dateParts[1], 10);
+                eDate.style.border = (month < 1 || month > 12 || year < 20 || year > 30) ? "1px solid red" : "1px solid greenyellow";
+            }
+        });
+    
+    //     document.getElementById('submit').addEventListener('click', function() {
+    //         if(validatePayment()){
+    //             updateOrderInformation();
+    //             alert('Payment processed!');
+    //         } else{
+    //             alert('Please fill in all required fields correctly.');
+    //         }
+           
+    //     });
+    //     function validatePayment(){
+    //         const cNumber = document.getElementById('number').value;
+    //         const eDate = document.getElementById('e-date').value;
+    //         const cvvBox = document.getElementById('cvv-box').value;
+    //         const cvv = document.getElementById('cvv').value;
+
+    //         if(!cumber || !eDate || !cvv){
+    //             return false;
+    //         }
+    //         return true;
+    //     }
+    // // validation on the payment button if the user clicks on the button must ask for validations.
+    //     function updateOrderInformation() {
+    //         if (eDate.value && cNumber.value && cvv.value && document.getElementById('email').value) {
+    //             paymentDetails.innerHTML = `
+    //                 <div>Date: ${eDate.value}</div>
+    //                 <div>Card Number: ${cNumber.value.replace(/.(?=.{4})/g, '*')}</div>
+    //                 <div>CVV: ${cvv.value.replace(/./g, '*')}</div>
+    //                 <div>Email: ${document.getElementById('email').value}</div>
+    //             `;
+    //         } else {
+    //             paymentDetails.innerHTML = '';
+    //         }
+    //     }
+    document.getElementById('submit').addEventListener('click', function() {
+        if (validatePayment()) {
+            updateOrderInformation();
+            alert('Payment processed!');
+        } else {
+            alert('Please fill in all required fields correctly.');
+            // Set all borders to red if validation fails
+            if (!cNumber.value.replace(/\s/g, '').length || cNumber.value.replace(/\s/g, '').length < 16) {
+                cNumber.style.border = "1px solid red";
+            }
+            if (cvv.value.length < 3) {
+                cvvBox.style.border = "1px solid red";
+            }
+            if (!eDate.value || !isValidExpiration(eDate.value)) {
+                eDate.style.border = "1px solid red";
+            }
+             if(!emailInput.value ){
+                 emailInput.style.border = "1 px solid red";
+             }
+        }
+    });
+
+    function validatePayment() {
+        const cNumberValue = cNumber.value.replace(/\s/g, '');
+        const eDateValue = eDate.value;
+        const cvvValue = cvv.value;
+        const email = email.value;
+        const emailValue = emailInput.value;
+
+        if (!cNumberValue || !eDateValue || !cvvValue || cvvValue.length < 3 || cNumberValue.length < 16 || !emailValue) {
+            return false;
+        }
+       
+
+        return true;
+    }
+
+    function isValidExpiration(date) {
+        const [month, year] = date.split('/').map(Number);
+        const currentYear = new Date().getFullYear() % 100; 
+        const currentMonth = new Date().getMonth() + 1; 
+        return !(month < 1 || month > 12 || year < currentYear || (year === currentYear && month < currentMonth));
+    }
+
+    function updateOrderInformation() {
+        const email = document.getElementById('email').value;
+        if (email) {
+            paymentDetails.innerHTML = `
+                <div>Date: ${eDate.value}</div>
+                <div>Card Number: ${cNumber.value.replace(/.(?=.{4})/g, '*')}</div>
+                <div>CVV: ${cvv.value.replace(/./g, '*')}</div>
+                <div>Email: ${email}</div>
+            `;
+        } else {
+            paymentDetails.innerHTML = '';
+        }
+    }
+
+
+};
+    </script> -->
+<div class="container">
+    <div class="center">
+        <p>Payment</p>
+        <hr style="border:1px solid orange; margin: 0 15px;">
+        <div class="card-details">
+            <form id="payment-form">
+                <p>Card number</p>
+                <div class="c-number" id="c-number">
+                    <input id="number" class="cc-number" placeholder="Card number" maxlength="19" required>
+                    <i class="fa-solid fa-credit-card" style="margin: 0;"></i>
+                </div>
+
+                <div class="c-details">
+                    <div>
+                        <p>Expiry date</p>
+                        <input id="e-date" class="cc-exp" placeholder="MM/YY" required maxlength="5">
+                    </div>
+                    <div>
+                        <p>CVV</p>
+                        <div class="cvv-box" id="cvv-box">
+                            <input id="cvv" class="cc-cvv" maxlength="3" placeholder="CVV">
+                            <i class="fa-solid fa-circle-question" title="3 digits on the back of the card" style="cursor: pointer;"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="email">
+                    <p>Email</p>
+                    <input type="email" placeholder="example@email.com" id="email" required>
+                </div>
+                <button class="btn" id="submit" type="button">PAY NOW</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="right">
+        <p>Order information</p>
+        <hr style="border:1px solid orange; margin: 0 15px;">
+        <div class="details">
+            <div style="font-weight: bold; padding: 3px 0;">Payment</div>
+            <div id="payment-details" style="padding: 3px 0;"></div>
+        </div>
+        <hr style="border:1px solid orange; margin: 0 15px;">
+        <img src="./images/images/Fees/card_img.png" alt="" class="img">
+    </div>
+</div>
+
+<script>
+window.onload = function() {
+    const cvv = document.getElementById('cvv');
+    const cvvBox = document.getElementById('cvv-box');
+    const eDate = document.getElementById('e-date');
+    const cNumber = document.getElementById('number');
+    const emailInput = document.getElementById('email');
+    const paymentDetails = document.getElementById('payment-details');
+
+    cNumber.addEventListener('keyup', function() {
+        let num = cNumber.value.replace(/\s/g, '');
+        let newValue = '';
+        for (let i = 0; i < num.length; i++) {
+            if (i % 4 === 0 && i > 0) newValue += ' ';
+            newValue += num[i];
+        }
+        cNumber.value = newValue;
+
+        cNumber.style.border = (num.length < 16) ? "1px solid red" : "1px solid greenyellow";
+    });
+
+    cvv.addEventListener('keyup', function() {
+        cvvBox.style.border = (cvv.value.length < 3) ? "1px solid red" : "1px solid greenyellow";
+    });
+
+    eDate.addEventListener('keyup', function() {
+        if (eDate.value.length === 2) eDate.value += '/';
+        const dateParts = eDate.value.split('/');
+        if (dateParts.length === 2) {
+            const month = parseInt(dateParts[0], 10);
+            const year = parseInt(dateParts[1], 10);
+            eDate.style.border = (month < 1 || month > 12 || year < 20 || year > 30) ? "1px solid red" : "1px solid greenyellow";
+        }
+    });
+
+    document.getElementById('submit').addEventListener('click', function() {
+        if (validatePayment()) {
+            updateOrderInformation();
+            alert('Payment processed!');
+        } else {
+            alert('Please fill in all required fields correctly.');
+            // Set borders to red if validation fails
+            if (!cNumber.value.replace(/\s/g, '').length || cNumber.value.replace(/\s/g, '').length < 16) {
+                cNumber.style.border = "1px solid red";
+            }
+            if (cvv.value.length < 3) {
+                cvvBox.style.border = "1px solid red";
+            }
+            if (!eDate.value || !isValidExpiration(eDate.value)) {
+                eDate.style.border = "1px solid red";
+            }
+            if (!emailInput.value) {
+                emailInput.style.border = "1px solid red"; // Fixed the border style
+            }
+        }
+    });
+
+    function validatePayment() {
+        const cNumberValue = cNumber.value.replace(/\s/g, '');
+        const eDateValue = eDate.value;
+        const cvvValue = cvv.value;
+        const emailValue = emailInput.value;
+
+        if (!cNumberValue || !eDateValue || !cvvValue || cvvValue.length < 3 || cNumberValue.length < 16 || !emailValue) {
+            return false;
+        }
+
+        return true;
+    }
+
+    function isValidExpiration(date) {
+        const [month, year] = date.split('/').map(Number);
+        const currentYear = new Date().getFullYear() % 100; 
+        const currentMonth = new Date().getMonth() + 1; 
+        return !(month < 1 || month > 12 || year < currentYear || (year === currentYear && month < currentMonth));
+    }
+
+    function updateOrderInformation() {
+        const emailValue = emailInput.value;
+        if (emailValue) {
+            paymentDetails.innerHTML = `
+                <div>Date: ${eDate.value}</div>
+                <div>Card Number: ${cNumber.value.replace(/.(?=.{4})/g, '*')}</div>
+                <div>CVV: ${cvv.value.replace(/./g, '*')}</div>
+                <div>Email: ${emailValue}</div>
+            `;
+        } else {
+            paymentDetails.innerHTML = '';
+        }
+    }
+};
+</script>
+
+</body>
+</html>
+ 
+ 
+

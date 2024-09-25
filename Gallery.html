@@ -1,296 +1,282 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Gallery Slideshow</title>
-    <style>
-      body {
-    font-family: cursive;
-    background-color:rgb(245, 245, 185);
-    
-    /* padding: 5%;
-    text-align: center;
-    font-size: 50; */
-}
-#navbar {
-    position: fixed;
-    top:0;
-    width:100%;
-    height:60px;
-    z-index: 1000;
-    background-color: orange;
-  }
-  .content{
-    margin-top:80px;
-    padding:20px;
-  }
-  
-  #navbar .nav-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  } 
-  
-  
-  .logo {
-    float: left;
-    margin-left: 10px;
-    font-size: 1.5em;
-    height: 50px;
-    letter-spacing: 1px;
-  } @media(max-width: 50px) {
-     
-    }
-  
-  #navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-      }
-  
-  #navbar li {
-    margin: 0 15px;
-    display: inline-block;
-  }
-  
-  #navbar li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  #navbar li a:hover {
-    /* border-bottom: 1px solid rgb(28, 121, 184); */
-    color: rgb(28, 121, 184);
-    transition: all 1s ease;
-    -webkit-transition: all 1s ease;
-    text-decoration: underline;
-  }
-  
-  /* Animated Bottom Line */
-  #navbar li a:before, #navbar li a:after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 1px;
-    bottom: -1px;
-    background: rgb(13, 26, 38);
-  }
-  
-  #navbar li a:before {
-    left: 0;
-    transition: 0.5s;
-  }
-  
-  #navbar li a:after {
-    background: rgb(13, 26, 38);
-    right: 0;
-    /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
-  }
-  
-  #navbar li a:hover:before {
-    background: rgb(13, 26, 38);
-    width: 100%;
-    transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
-  }
-  
-  #navbar li a:hover:after {
-    background: transparent;
-    width: 100%;
-    /* transition: 0s; */
-  }
-
-/* Styling the area of the slides */
-#slideshow {
-    overflow:hidden;
-    height: 100%;
-    width: 728px; 
-    margin:70PX;
-    text-align: center; 
-    margin: 0px auto; 
-  /* width:1100px; 
-  height:500px;  */
-  text-align:center;
-  /* border-color: orange; */
-  /* border-width: thick;
-  border-style: dashed; */
-
-
-}
-
-/* Style each of the sides 
-  with a fixed width and height */
-.slide {
-    float:left;
-    height: 100%;
-    width: 728px;
-    text-align: center;
-    display:block;
-  
-}
-
-/* Add animation to the slides */
-.slide-wrapper {
-
-    /* Calculate the total width on the
-    basis of number of slides */
-    width: calc(728px * 8);
-
-    /* Specify the animation with the
-    duration and speed */
-    animation: slide 10s ease infinite;
-}
-
-/* Set the background color
-  of each of the slides */
-.slide:nth-child(1) img {
-  background: orange;
-  background-size: cover;
-  background-position: center;
-
-  
-}
-
-.slide:nth-child(2) {
-    
-    background-size: cover;
-    background-position: center;
-}
-
-.slide:nth-child(3) {
-    /* background: red; */
-    background-size: cover;
-    background-position: center;
-}
-
-.slide:nth-child(4) {
-    /* background: yellow; */
-    background-size: cover;
-    background-position: center;
-}
-.slide:nth-child(5) {
-    /* background: yellow; */
-    background-size: cover;
-    background-position: center;
-}
-.slide:nth-child(6) {
-    /* background: yellow; */
-    background-size: cover;
-    background-position: center;
-}
-.slide:nth-child(7) {
-    /* background: yellow; */
-    background-size: cover;
-    background-position: center;
-}
-.slide:nth-child(8) {
-    /* background: yellow; */
-    background-size: cover;
-    background-position: center;
-}
-
-/* Define the animation 
-  for the slideshow */
-@keyframes slide {
-
-    /* Calculate the margin-left for 
-    each of the slides */
-    20% {
-        margin-left: 0px;
-    }
-
-    40% {
-        margin-left: calc(-728px * 1);
-    }
-
-    60% {
-        margin-left: calc(-728px * 2);
-    }
-
-    80% {
-        margin-left: calc(-728px * 3);
-    }
-     100%{
-        margin-left: calc(-728px * 4);
-    }
-    120%{
-        margin-left: calc(-728px * 5);
-    }
-    140%{
-        margin-left: calc(-728px * 6);
-    }
-    160%{
-        margin-left: calc(-728px * 7);
-    }
-
-
-}
-h1{
-    color:orange;
-    text-align: center;
-    font: size 500px;
-    margin: 50px;
-}
-
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="./styles/slide.css">
 </head>
-</head>
-<header>
-<nav id="navbar" class="">
-<div class="nav-wrapper">
-  <!-- Navbar Logo -->
-  <div class="logo">
-    <!-- Logo  -->
-    <a href="#home"><img width="100px" height="50px" src="./images/images/HomeImages/3.png"></a>
-  </div>
-
-  <!-- Navbar Links -->
-  <ul id="menu">
-    <li><a href="../SquadGoalsECD/Homepage.html">Home</a></li>
-    <li><a href="../SquadGoalsECD/about us and landing page.html">About Us</a></li>
-    <li><a href="../SquadGoalsECD/Activities.html">Activities</a></li>
-    <li><a href="../SquadGoalsECD/Gallery.html">Gallery</a></li>
-    <li><a href="../SquadGoalsECD/program.html">Programmes</a></li>
-    <li><a href="../SquadGoalsECD/Contacts.html">Contacts</a></li>
-  </ul>
-</div>
-</nav>
-</header>
 <body>
-<br>
-    <!-- Define the slideshow container -->
-     <!-- <h1>OUR SCHOOL</h1> -->
-    <div id="slideshow">
-        <div class="slide-wrapper">
-            <!-- <Define each of the slides
-         and write the content --> 
-            <div class="slide">
-                <h1 class="slide-number">
-                  <img src="./images/images/gallery pictures/black kids 2.jpg"height="510px" width="728" margin="0 auto">
-                </h1>
-            </div>
-            <div class="slide">
-                <h1 class="slide-number">
-                  <img src="./images/images/gallery pictures/classroom.jpg"height="510px" width="728" margin="0 auto">
-                </h1>
-            </div>
-            <div class="slide">
-                <h1 class="slide-number">
-                    <img src="./images/images/gallery pictures/last.jpg" height="510px" width="728" margin="0 auto">
-                </h1>
-            </div>
-            <div class="slide">
-                <h1 class="slide-number">
-                <img src="./images/images/gallery pictures/preschools.jpg" height="510px" width="728" margin="0 auto">
-                </h1>
-            </div>
-            <div class="slide">
-                <h1 class="slide-number">
-                <img src="./images/images/gallery pictures/PRESCHOOL.jpg" height="510px" width="728" margin="0 auto">
-                </h1>
-            </div>   
+
+    <header>
+        <nav id="navbar" class="">
+        <div class="nav-wrapper">
+          <!-- Navbar Logo -->
+          <div class="logo">
+            <!-- Logo  -->
+            <a href="#home"><img width="100px" height="50px" src="./images/images/HomeImages/3.png"></a>
+          </div>
+        
+          <!-- Navbar Links -->
+          <ul id="menu">
+            <li><a href="../SquadGoalsECD/Homepage.html">Home</a></li>
+            <li><a href="../SquadGoalsECD/about us and landing page.html">About Us</a></li>
+            <li><a href="../SquadGoalsECD/Activities.html">Activities</a></li>
+            <li><a href="../SquadGoalsECD/Gallery.html">Gallery</a></li>
+            <li><a href="../SquadGoalsECD/program.html">Programmes</a></li>
+            <li><a href="../SquadGoalsECD/Contacts.html">Contacts</a></li>
+          </ul>
         </div>
-    </div>
-</body> 
+        </nav>
+        </header>
+<!-- <div class="carousel">
+
+        <div class="list">
+
+            <div class="item" style="background-image: url(gallery/Activities.jpg);">
+                <div class="content">
+                    <div class="title">SMALL STEPS</div>
+                    <div class="name">OUR SCHOOL</div>
+                    <div class="des"></div>
+                    <div class="btn">
+                        <button><a href="../SquadGoalsECD/Homepage.html">See More</a></button>
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item" style="background-image: url(gallery/activities2.jpg);">
+                
+                <div class="content">
+                    <div class="title">SMALL STEPS</div>
+                    <div class="name">OUR SCHOOL</div>
+                    <div class="des"></div>
+                    <div class="btn">
+                        <button>See More</button>
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="item" style="background-image: url(gallery/black\ kids\ 3.jpg);">
+
+                <div class="content">
+                    <div class="title">SMALL STEPS</div>
+                    <div class="name">OUR SCHOOL</div>
+                    <div class="des"></div>
+                    <div class="btn">
+                        <button>See More</button>
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="item" style="background-image: url(gallery/pexels-mikhail-nilov-8924168.jpg);">
+                
+                <div class="content">
+                    <div class="title">SMALL STEPS</div>
+                    <div class="name">OUR SCHOOL</div>
+                    <div class="des"></div>
+                    <div class="btn">
+                        <button>See More</button>
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+            <div class="item" style="background-image: url(gallery/pexels-yankrukov-8612983.jpg);">
+                
+                <div class="content">
+                    <div class="title">SMALL STEPS </div>
+                    <div class="name">OUR SCHOOL</div>
+                    <div class="des"></div>
+                    <div class="btn">
+                        <button>See More</button>
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="item" style="background-image: url(gallery/PRESCHOOL.jpg);">
+                
+                <div class="content">
+                    <div class="title">SMALL STEPS </div>
+                    <div class="name">OUR SCHOOL</div>
+                    <div class="des"></div>
+                    <div class="btn">
+                        <button>See More</button>
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(gallery/preschools.jpg);">
+                
+                  <div class="content">
+                      <div class="title">SMALL STEPS</div>
+                      <div class="name">OUR SCHOOL</div>
+                      <div class="des"></div>
+                      <div class="btn">
+                          <button>See More</button>
+                          <button>Subscribe</button>
+                      </div>
+                  </div>
+            </div>
+            <div class="item" style="background-image: url(gallery/Activities.jpg);">
+                
+              <div class="content">
+                  <div class="title">SMALL STEPS </div>
+                  <div class="name">OUR SCHOOL</div>
+                  <div class="des"></div>
+                  <div class="btn">
+                      <button>See More</button>
+                      <button>Subscribe</button>
+                  </div>
+              </div>
+              <div class="item" style="background-image: url(gallery/outside\ school.avif);">
+                
+                <div class="content">
+                    <div class="title">SMALL STEPS </div>
+                    <div class="name">OUR SCHOOL</div>
+                    <div class="des"></div>
+                    <div class="btn">
+                        <button>See More</button>
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </div>
+            </div>
+
+        </div>
+
+        <!--next prev button-->
+        <div class="carousel">
+            <div class="list">
+                <div class="item" style="background-image: url(gallery/Activities.jpg);">
+                    <div class="content">
+                        <div class="title">SMALL STEPS</div>
+                        <div class="name">OUR SCHOOL</div>
+                        <div class="des"></div>
+                        <div class="btn">
+                            <button><a href="../SquadGoalsECD/Homepage.html">See More</a></button>
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="item" style="background-image: url(gallery/activities2.jpg);">
+                    <div class="content">
+                        <div class="title">SMALL STEPS</div>
+                        <div class="name">OUR SCHOOL</div>
+                        <div class="des"></div>
+                        <div class="btn">
+                            <button>See More</button>
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="item" style="background-image: url(gallery/black%20kids%203.jpg);">
+                    <div class="content">
+                        <div class="title">SMALL STEPS</div>
+                        <div class="name">OUR SCHOOL</div>
+                        <div class="des"></div>
+                        <div class="btn">
+                            <button>See More</button>
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="item" style="background-image: url(gallery/pexels-mikhail-nilov-8924168.jpg);">
+                    <div class="content">
+                        <div class="title">SMALL STEPS</div>
+                        <div class="name">OUR SCHOOL</div>
+                        <div class="des"></div>
+                        <div class="btn">
+                            <button>See More</button>
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="item" style="background-image: url(gallery/pexels-yankrukov-8612983.jpg);">
+                    <div class="content">
+                        <div class="title">SMALL STEPS</div>
+                        <div class="name">OUR SCHOOL</div>
+                        <div class="des"></div>
+                        <div class="btn">
+                            <button>See More</button>
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="item" style="background-image: url(gallery/PRESCHOOL.jpg);">
+                    <div class="content">
+                        <div class="title">SMALL STEPS</div>
+                        <div class="name">OUR SCHOOL</div>
+                        <div class="des"></div>
+                        <div class="btn">
+                            <button>See More</button>
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="item" style="background-image: url(gallery/preschools.jpg);">
+                    <div class="content">
+                        <div class="title">SMALL STEPS</div>
+                        <div class="name">OUR SCHOOL</div>
+                        <div class="des"></div>
+                        <div class="btn">
+                            <button>See More</button>
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="item" style="background-image: url(gallery/outside%20school.avif);">
+                    <div class="content">
+                        <div class="title">SMALL STEPS</div>
+                        <div class="name">OUR SCHOOL</div>
+                        <div class="des"></div>
+                        <div class="btn">
+                            <button>See More</button>
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Navigation Buttons -->
+            <div class="arrows">
+                <button class="prev"><</button>
+                <button class="next">></button>
+            </div>
+        
+            <!-- Time Running -->
+            <div class="timeRunning"></div>
+        </div>
+        
+        
+        <!-- <div class="arrows">
+            <button class="prev"><</button>
+            <button class="next">></button>
+        </div>
+
+
+        <!-- time running -->
+        <!-- <div class="timeRunning"></div> -->
+
+    </div> 
+
+    <script src="./styles/JavaScript/slide.js"></script>
+</body>
 </html>
+

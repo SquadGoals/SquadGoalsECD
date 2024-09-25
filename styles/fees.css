@@ -1,0 +1,268 @@
+body{
+    font-family: cursive;
+    margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+  #navbar {
+position: fixed;
+top:0;
+width:100%;
+height:60px;
+z-index: 1000;
+background-color: orange;
+}
+.content{
+margin-top:80px;
+padding:20px;
+}
+
+#navbar .nav-wrapper {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 20px;
+} 
+
+
+.logo {
+float: left;
+margin-left: 10px;
+font-size: 1.5em;
+height: 50px;
+letter-spacing: 1px;
+} @media(max-width: 50px) {
+ 
+}
+
+#navbar ul {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+  }
+
+#navbar li {
+margin: 0 15px;
+display: inline-block;
+}
+
+#navbar li a {
+color: white;
+text-decoration: none;
+font-weight: bold;
+}
+
+#navbar li a:hover {
+/* border-bottom: 1px solid rgb(28, 121, 184); */
+color: rgb(28, 121, 184);
+transition: all 1s ease;
+-webkit-transition: all 1s ease;
+text-decoration: underline;
+}
+
+/* Animated Bottom Line */
+#navbar li a:before, #navbar li a:after {
+content: '';
+position: absolute;
+width: 0%;
+height: 1px;
+bottom: -1px;
+background: rgb(13, 26, 38);
+}
+
+#navbar li a:before {
+left: 0;
+transition: 0.5s;
+}
+
+#navbar li a:after {
+background: rgb(13, 26, 38);
+right: 0;
+/* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
+}
+
+#navbar li a:hover:before {
+background: rgb(13, 26, 38);
+width: 100%;
+transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+}
+
+#navbar li a:hover:after {
+background: transparent;
+width: 100%;
+/* transition: 0s; */
+}
+/*  fee Container */
+.fees{
+     margin: 0; 
+     background-image: url('../images/images/Fees/background.jpg');
+     background-position: right bottom, left top;
+     background-repeat: no-repeat, repeat;
+     background-size: cover;
+     height: 100%; 
+     width: 100%; 
+    font-size: 24px;
+    
+}
+.fees-Info{
+    text-align: center bottom;
+    text-indent:  10px;
+    direction: ltr;
+    color:orange;
+    top:50;
+    text-align: center;
+  
+
+}
+.fees-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    background-color: whitesmoke;
+    color: black;
+    padding: 10px 20px; 
+    width: 50%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    box-sizing: border-box;
+    height: 70%; 
+    min-height: 40px; 
+    border: orange;
+    border-style: double;
+    font-family: sans-serif; 
+   
+}
+.align{
+  text-align: left;
+  direction: ltr;
+  color:black;
+  font-size: smaller;
+ 
+}
+.fees-title{
+  font-size:20px;
+  font-family: cursive;
+  align-items: center;
+  
+
+}
+.icons{
+background-color:white;
+padding:20px;
+}
+.icons h2{
+  text-align: center;
+  font-size:medium;
+  margin-bottom: 20px;
+  color:black;
+}
+.icons-container{
+  /* display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+  gap: 20px; 
+   */
+   display: flex;
+   justify-content: space-between;
+   align-items: center; 
+
+   color: black;
+   padding: 10px 20px; 
+   width: 100%; 
+   max-width: 1200px; 
+   margin: 0 auto; 
+   box-sizing: border-box;
+   height: auto; 
+   min-height: 60px; 
+   font-family: sans-serif;
+}
+.icons-cards{
+  
+  border: 0px solid;
+  border-radius: 0px;
+  padding: 15px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+ article h2 a,
+article h2 a:link,
+article h2 a:visited,
+article h2 a:hover,
+article h2 a:focus,
+article h2 a:active {
+  text-decoration: none;
+  color: #000;
+}
+article {
+  flex: 1 0 10em;
+  margin: 0.5em 1em;
+  
+
+}
+
+
+.clickablecard:hover {
+  cursor: pointer;
+}
+
+.clickablecard:hover p {
+  color: #00d;
+}
+
+.clickablecard:hover p a {
+  color: #000;
+}
+
+
+article h2 a:hover,
+article h2 a:focus,
+.clickablecard:hover .cardmainlink {
+  text-decoration: underline;
+  text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+  color: #00d;
+} 
+
+.icons-image{
+  /* width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 10px; */
+  
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 10px;
+    background-size: 50%;
+  }
+  
+
+@media (max-width: 782px) {
+  .icons-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .icons-cards {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 20px; 
+  }
+  .icons-cards:last-child {
+      margin-bottom: 0; 
+  }
+}
+.copyright
+{
+  text-align:center;
+  padding:10px;
+  background-color:orange;
+  color:#ddd;
+  font-size:14px;
+}
+.copyright p{
+  margin:0;
+}
