@@ -57,7 +57,7 @@
 </div>
 <!--REGISTRATION FORM-->
 <div class = register-container id = "register">
-<form id = "registerForm" onsubmit = "return validateRegister(event)" action = "../SquadGoalsECD/Homepage.html">
+<form id = "registerForm" onsubmit = "return validateRegister(event)" action = "../SquadGoalsECD/loginpage.html">
 <div class = "top">
 <header>SIGN UP</header>
 <span>Have an account? <a href = "#" onclick="login()">Login</a></span>
@@ -105,81 +105,142 @@
 </div>
 </form>
 <script>
- function validateLogin(event) {
-    var username = document.getElementById('loginUsername').value;
-    var password = document.getElementById('loginPassword').value;
-    var isValid = true;
+function validateLogin(event) {
+    var username = document.getElementById('loginUsername').value.trim();
+    var password = document.getElementById('loginPassword').value.trim();
+
+    var usernameError = document.getElementById('loginUsernameError');
+    var passwordError = document.getElementById('loginPasswordError');
 
     
-    document.getElementById('loginUsernameError').innerHTML = '';
-    document.getElementById('loginPasswordError').innerHTML = '';
+    usernameError.innerHTML = '';
+    passwordError.innerHTML = '';
+
+    var isValid = true;
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     
     if (username === "") {
-        document.getElementById('loginUsernameError').innerHTML = "username or email is required";
+        usernameError.innerHTML = "Username or email is required";
         isValid = false;
+    } else if (username.includes('@')) {
+        
+        if (!emailPattern.test(username)) {
+            usernameError.innerHTML = "Please enter a valid email address";
+            isValid = false;
+        }
+    } else {
+        
+        if (username.length < 8) {  
+            usernameError.innerHTML = "Please enter a valid email address";
+            isValid = false;
+        }
     }
 
+    
     if (password === "") {
-        document.getElementById('loginPasswordError').innerHTML = "password is required";
+        passwordError.innerHTML = "Password is required";
+        isValid = false;
+    } else if (password.length < 8) {
+        passwordError.innerHTML = "Password must be at least 8 characters long";
         isValid = false;
     }
 
     
     if (!isValid) {
-        event.preventDefault();
-    } else {
-    
-        window.location.href ="/SquadGoalsECD/Homepage.html";  
+        event.preventDefault(); 
+        return false; 
     }
 
+   
+    window.location.href = "../SquadGoalsECD/Homepage.html";  
+    return true;
+}
+
+
+
+
+function validateRegister(event) {
+    var isValid = true;
+    var firstName = document.getElementById('registerFirstname').value.trim();
+    var lastName = document.getElementById('registerLastname').value.trim();
+    var email = document.getElementById('registerEmail').value.trim();
+    var password = document.getElementById('registerPassword').value.trim();
+
+    var firstNameError = document.getElementById('registerFirstnameError');
+    var lastNameError = document.getElementById('registerLastnameError');
+    var emailError = document.getElementById('registerEmailError');
+    var passwordError = document.getElementById('registerPasswordError');
+
+    firstNameError.innerHTML = '';
+    lastNameError.innerHTML = '';
+    emailError.innerHTML = '';
+    passwordError.innerHTML = '';
+
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (firstName === "") {
+        firstNameError.innerHTML = "First name is required";
+        isValid = false;
+    }
+
+    if (lastName === "") {
+        lastNameError.innerHTML = "Last name is required";
+        isValid = false;
+    }
+
+    if (email === "") {
+        emailError.innerHTML = "Email is required";
+        isValid = false;
+    } else if (!emailPattern.test(email)) {
+        emailError.innerHTML = "Please enter a valid email address";
+        isValid = false;
+    }
+
+    if (password === "") {
+        passwordError.innerHTML = "Password is required";
+        isValid = false;
+    } else if (password.length < 8) {
+        passwordError.innerHTML = "Password must be at least 8 characters long";
+        isValid = false;
+    }
+
+    if (!isValid) {
+        event.preventDefault(); // Prevent form submission if invalid
+    }
     return isValid;
 }
 
-
-    
-
-
-function validateRegister(event){
-var isValid = true;
-var firstName = document.getElementById('registerFirstname').value;
-var lastName = document.getElementById('registerLastname').value;
-var email = document.getElementById('registerEmail').value;
-var password = document.getElementById('registerPassword').value;
-
-if (firstName === "") {
-document.getElementById('registerFirstnameError').innerHTML = "firstname is required";
-isValid = false;
+// MENU TOGGLE FUNCTION
+function myMenuFunction() {
+    var i = document.getElementById("navMenu");
+    if (i.className === "nav-menu") {
+        i.className += " responsive";
+    } else {
+        i.className = "nav-menu";
+    }
 }
 
-if (lastName === "") {
-document.getElementById('registerLastnameError').innerHTML = "lastname is required";
-isValid = false;
-}
-var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-if (email === "") {
-document.getElementById('registerEmailError').innerHTML = "email is required";
-isValid = false;}
-else if (!emailPattern.test(email)){
-document.getElementById('registerEmailError').innerHTML = "please enter a valid email address";
-isValid = false;
+
+var x = document.getElementById("login");
+var y = document.getElementById("register");
+
+function login() {
+    x.style.left = "4px";
+    y.style.right = "-520px";
+    x.style.opacity = 1;
+    y.style.opacity = 0;
 }
 
-if (password === "") {
-document.getElementById('registerPasswordError').innerHTML = "password is required";
-isValid = false;
-}
-else if (password.length <8){
-document.getElementById('registerPasswordError').innerHTML = "password must be atleast 8 characters long";
-isValid = false;
+function register() {
+    x.style.left = "-510px";
+    y.style.right = "5px";
+    x.style.opacity = 0;
+    y.style.opacity = 1;
 }
 
-if(!isValid) {
-event.preventDefault();
-}
-}
-////
-
+</script>
+<script>
 function myMenuFunction(){
 var i = document.getElementById("navMenu");
 if(i.className === "nav-menu"){
@@ -396,6 +457,7 @@ transition: .3s ease-in-out;
 .submit:hover{
 background: rgba(241, 97, 1, 0.795);
 box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+transform: scale(1.05);
 }
 .two-col{
 display: flex;
