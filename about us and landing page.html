@@ -2,346 +2,282 @@
 <html>
 <head>
 <title>ABOUT US LANDING PAGE</title>
-<meta name="viewport" content="width=device-width , initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  
-    #navbar {
-    position: fixed;
-    top:0;
-    width:100%;
-    height:60px;
-    z-index: 1000;
-    background-color: orange;
-  }
-  .content{
-    margin-top:80px;
-    padding:20px;
-  }
-  
-  #navbar .nav-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  } 
-  
-  
-  .logo {
-    float: left;
-    margin-left: 10px;
-    font-size: 1.5em;
-    height: 50px;
-    letter-spacing: 1px;
-  } @media(max-width: 50px) {
-     
-    }
-  
-  #navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-      }
-  
-  #navbar li {
-    margin: 0 15px;
-    display: inline-block;
-  }
-  
-  #navbar li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  #navbar li a:hover {
-    /* border-bottom: 1px solid rgb(28, 121, 184); */
-    color: rgb(28, 121, 184);
-    transition: all 1s ease;
-    -webkit-transition: all 1s ease;
-    text-decoration: underline;
-  }
-  
-  /* Animated Bottom Line */
-  #navbar li a:before, #navbar li a:after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 1px;
-    bottom: -1px;
-    background: rgb(13, 26, 38);
-  }
-  
-  #navbar li a:before {
-    left: 0;
-    transition: 0.5s;
-  }
-  
-  #navbar li a:after {
-    background: rgb(13, 26, 38);
-    right: 0;
-    /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
-  }
-  
-  #navbar li a:hover:before {
-    background: rgb(13, 26, 38);
-    width: 100%;
-    transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
-  }
-  
-  #navbar li a:hover:after {
-    background: transparent;
-    width: 100%;
-    /* transition: 0s; */
-  }
-  /* h1 {
-  text-align: center;
-  text-indent:20px;
-  margin:0;
-  } */
- 
-  p{
-    align-items: center;
-    font-size: large;
-    text-justify:inter-word;
-    text-align: center;
-    justify-content: center;
-    margin-top: 0px;
-    height: auto;
-  
-  }
-  body{
-    font-family: cursive;
+        body {
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+            padding-top: 60px; 
+            background-color: #f0f0f0; 
+        }
 
-  }
-  h1 {
-    text-align: center;
-    margin: 100px;
-    font-size: 30PX;
-    position: relative;
-  } 
- 
-.Team{
-  background-color:orange;
-  padding:20px;
- 
-}
-.Team h3 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.team-Container{
-  display: flex;
-  justify-content: space-between; /* Distributes cards across the line */
-  align-items: flex-start;
-  gap: 20px; /* Space between testimonial cards */
-  
-}
-.team-card{
-  background-color:white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  width: 30%; /* Adjust width as needed */
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  perspective: 1000px;
-}
-.team-image {
-  max-width: 80px;
-  height: auto;
-  border-radius: 50%;
-  margin-top: 10px;
-}
-/* Responsive Design */
-@media (max-width: 768px) {
-  .Information-container {
-      flex-direction: column;
-      align-items: center;
-  }
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px; /* Reduced height */
+            z-index: 1000;
+            background-color: orange;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add slight shadow for visibility */
+        }
 
-  .team-card {
-      width: 100%;
-      max-width: 500px; /* Adjust to fit your design */
-      margin-bottom: 20px; /* Space between cards when stacked */
-      border-radius: 8px;
-      height: 50px;
-  }
+        #navbar .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px; /* Reduced padding */
+        }
 
-  .team-card:last-child {
-      margin-bottom: 0; /* Remove margin for the last card */
-  }
-}
-.flipcards{
-  position:flex;
-}
-.staff li {
-    list-style-type: none;
-}
+        .logo img {
+            margin-left: 10px; 
+            float: left;
+            height:50px;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+           } @media(max-width: 50px) {}
 
-.copyright
-{
-  text-align:center;
-  padding:10px;
-  background-color:orange;
-  color:#ddd;
-  font-size:smaller;
-}
-.copyright p{
-  margin:0;
-}
-h1 {color: orange; 
-  font-size: 30PX ; 
-  text-align: center;
-  font-family: cursive;
-}
+        #navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
 
-h2{color:white; 
-  font-size: 28px; 
-  text-align: center; 
-  font-family: cursive;}
+        #navbar li {
+            margin: 0 10px; /* Reduced spacing between menu items */
+            display: inline-block;
+        }
 
-  .animate-image {
-  float: left;
-  }
-  .align{
-  text-align: center;
-  text-indent:  100px;
-  direction: ltr;
-}
-.copyright
-{
-  text-align:center;
-  padding:10px;
-  background-color:orange;
-  color:#ddd;
-  font-size:14px;
-}
-.copyright p{
-  margin:0;
-}
-</style>
+        #navbar li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            font-size: 16px; 
+        }
+
+        #navbar li a:hover {
+            color: rgb(28, 121, 184);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+       
+        #navbar li a:before, #navbar li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -1px;
+            background: rgb(13, 26, 38);
+            transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+
+        #navbar li a:hover:before {
+            width: 100%;
+        }
+
+        #navbar li a:hover:after {
+            width: 100%;
+            background: transparent;
+        }
+
+        h1 {
+            background: linear-gradient(to right, orange, yellow);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 30px; 
+            text-align: center;
+            margin: 40px 0; 
+        }
+
+        h2 {
+            color: white;
+            font-size: 28px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        p {
+            text-align: center;
+            font-size: large;
+            margin-top: 20px; 
+        }
+
+        .Team {
+            background-color: orange;
+            padding: 20px;
+        }
+
+        .team-Container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .team-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .Information-image {
+            max-width: 100px;
+            height: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            #navbar.active ul {
+                display: flex;
+            }
+
+            .team-Container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .team-card {
+                width: 100%; 
+                margin-bottom: 20px; 
+            }
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 10px;
+            background-color: orange;
+            color: white;
+            font-size: 14px;
+        }
+
+        .copyright p {
+            margin: 0;
+        }
+
+        
+        .animate-image {
+            display: block; 
+            margin: 20px auto; 
+            max-width: 100%; 
+            height: auto; 
+        }
+    </style>
 </head>
 <header>
-  <nav id="navbar" class="">
-  <div class="nav-wrapper">
-    <!-- Navbar Logo -->
-    <div class="logo">
-      <!-- Logo  -->
-      <a href="#home"><img width="100px" height="50px" src="./images/images/HomeImages/3.png"></a>
-    </div>
-  
-    <!-- Navbar Links -->
-    <ul id="menu">
-      <li><a href="../SquadGoalsECD/Homepage.html">Home</a></li>
-      <li><a href="../SquadGoalsECD/about us and landing page.html">About Us</a></li>
-      <li><a href="../SquadGoalsECD/Activities.html">Activities</a></li>
-      <li><a href="../SquadGoalsECD/Gallery.html">Gallery</a></li>
-      <li><a href="../SquadGoalsECD/program.html">Programmes</a></li>
-      <li><a href="../SquadGoalsECD/Contacts.html">Contacts</a></li>
-    </ul>
-  </div>
-</nav>
+    <nav id="navbar">
+        <div class="nav-wrapper">
+            <div class="logo">
+                <a href="#home"><img src="./images/images/HomeImages/3.png" alt="Logo"></a>
+            </div>
+            <ul id="menu">
+                <li><a href="../SquadGoalsECD/Homepage.html">Home</a></li>
+                <li><a href="../SquadGoalsECD/about us and landing page.html">About Us</a></li>
+                <li><a href="../SquadGoalsECD/Activities.html">Activities</a></li>
+                <li><a href="../SquadGoalsECD/Gallery.html">Gallery</a></li>
+                <li><a href="../SquadGoalsECD/program.html">Programmes</a></li>
+                <li><a href="../SquadGoalsECD/Contacts.html">Contacts</a></li>
+            </ul>
+        </div>
+    </nav>
 </header>
 <body>
-  <!--About us welcoming Animation-->
-  <img src="./images/images/HomeImages/Colorful and Cute Kindergarten Logo (2).png"alt="Welcome"class="animate-image">
-  <h1 style="height: 10px;"><span class="jump">A</span>
-    <span>B</span>  
-    <span>O</span>
-    <span>U</span>
-    <span>T</span>
-    &nbsp;  
-    <span>U</span>
-    <span>S</span>
-    &nbsp;  
-    <span>A</span>
-    <span>T</span>
-    &nbsp;  
-    <span>S</span>
-    <span>M</span>
-    <span>A</span>
-    <span>L</span>
-    <span>L</span>
-    &nbsp;  
-    <span>S</span>
-    <span>T</span>
-    <span>E</span>
-    <span>P</span>
-    <span>S</span>
-  </h1>
-  
-<p class="text-align">Welcome to Small Steps, a nurturing and inclusive Early Childhood Development center dedicated to fostering a love of learning in young children. Our passionate team of educators and caregivers provide a safe, stimulating environment that encourages social, emotional, cognitive, and physical growth. 
-  We believe in creating an inclusive enviroment that encourages interaction amongst our learners .</p>
- <br>
- <br>
+    <img src="./images/images/HomeImages/Colorful and Cute Kindergarten Logo (2).png" alt="Welcome" class="animate-image">
+    
+    <h1>
+        <span class="jump">A</span>
+        <span>B</span>  
+        <span>O</span>
+        <span>U</span>
+        <span>T</span>
+        &nbsp;  
+        <span>U</span>
+        <span>S</span>
+        &nbsp;  
+        <span>A</span>
+        <span>T</span>
+        &nbsp;  
+        <span>S</span>
+        <span>M</span>
+        <span>A</span>
+        <span>L</span>
+        <span>L</span>
+        &nbsp;  
+        <span>S</span>
+        <span>T</span>
+        <span>E</span>
+        <span>P</span>
+        <span>S</span>
+    </h1>
+    
+    <p>Welcome to Small Steps, a nurturing and inclusive Early Childhood Development center dedicated to fostering a love of learning in young children. Our passionate team of educators and caregivers provide a safe, stimulating environment that encourages social, emotional, cognitive, and physical growth. We believe in creating an inclusive environment that encourages interaction amongst our learners.</p>
  
-<section class="Team">
+    <section class="Team">
+        <h2>
+            <span>M</span>
+            <span>E</span>  
+            <span>E</span>
+            <span>T</span>
+            &nbsp;  
+            <span>O</span>
+            <span>U</span>
+            <span>R</span>
+            &nbsp;  
+            <span>T</span>
+            <span>E</span>
+            <span>A</span>
+            <span>M</span>
+        </h2>
 
-  <h2 style="height: 10px;"> <span>M</span>
-    <span>E</span>  
-    <span>E</span>
-    <span>T</span>
-    &nbsp;  
-    <span>O</span>
-    <span>U</span>
-    <span>R</span>
-    &nbsp;  
-    <span>T</span>
-    <span>E</span>
-    <span>A</span>
-    <span>M</span>
-  </h1>
-  <br>
-<!--Staff Information -->
-    <div class="team-Container">
-        <div class="team-card">
-          <div class="flipcards">
-            <img src="./images/images/AboutUs/images/zimi.jpg" width=""  class="Information-image">
-            
-             <ul class="staff">
-            <h3><u>Zimkitha Nongamaza <i>(ECD EDUCATOR)</i></u></h3>
-            <h4><u>Educational Qualifications & Experience</u></h4>
-            <li class="staff">IIE Higher Certificate in Early Childhood Development (ROSEBANK COLLEGE)</li>
-            <li>Diploma in Early Childhood Development (North West University)</li>
-            <li>10 years experience in the ECD field</li>
-             </ul>
+        <div class="team-Container">
+            <div class="team-card">
+                <img src="./images/images/AboutUs/images/zimi.jpg" class="Information-image" alt="Zimkitha Nongamaza">
+                <h3><u>Zimkitha Nongamaza <i>(ECD EDUCATOR)</i></u></h3>
+                <h4><u>Educational Qualifications & Experience</u></h4>
+                <ul class="staff">
+                    <li>IIE Higher Certificate in Early Childhood Development (ROSEBANK COLLEGE)</li>
+                    <li>Diploma in Early Childhood Development (North West University)</li>
+                    <li>10 years experience in the ECD field</li>
+                </ul>
+            </div>
+            <div class="team-card">
+                <img src="./images/images/AboutUs/images/yandisa.jpg" class="Information-image" alt="Yandisa Ndubela">
+                <h3><u>Yandisa Ndubela <i>(HEAD OF SECURITY)</i></u></h3>
+                <h4><u>Educational Qualifications & Experience</u></h4>
+                <ul class="staff">
+                    <li>Diploma in Law Enforcement (Nelson Mandela University)</li>
+                    <li>Former SAPS OFFICER</li>
+                    <li>Current Head Of Security</li>
+                    <li>2 years working at the centre</li>
+                </ul>
+            </div>
+            <div class="team-card">
+                <img src="./images/images/AboutUs/images/ntosh.jpg" class="Information-image" alt="Ntombekhaya Mkaba">
+                <h3><u>Ntombekhaya Mkaba<i> (CENTRE MANAGER)</i></u></h3>
+                <h4><u>Educational Qualifications & Experience</u></h4>
+                <ul class="staff">
+                    <li>Diploma in ECD (Mandela University)</li>
+                    <li>Diploma in Business Management (Mandela University)</li>
+                    <li>5 years of ECD experience</li>
+                </ul>
+            </div>
         </div>
-      </div>
-        <div class="team-card">
-          <div class="flipcards">
-            <img src="./images/images/AboutUs/images/yandisa.jpg" alt="" width="" class="Information-image">
-            <ul class="staff">
-            <h3><u>Yandisa Ndubela <i>(HEAD OF SECURITY)</i></u></h3>
-            <h4><u>Educational Qualifications & Experience</u></h4>
-            <li class="staff">Diploma in Law Enforcement (Nelson Mandela University)</li>
-            <li>Former SAPS OFFICER</li>
-            <li>Current Head Of Security</li>
-            <li>2 years working at the centre</li>
-            </ul>
-        </div>
-        </div>
-        <div class="team-card">
-          <div class="flipcards">
-            <img src="./images/images/AboutUs/images/ntosh.jpg" alt="" width="" class="Information-image">
-            <ul class="staff">
-            <h3><u>Ntombekhaya Mkaba<i> (CENTRE MANAGER)</i></u></h3>
-            <h4><u>Educational Qualifications & Experience</u></h4>
-            <li>BA General: Majoring in Physcology (Nelson Mandela University)</li>
-            <li>Diploma in Business Management (Nelson Mandela University)</li>
-            <li>3 years as Centre Management</li>
-            </ul>
-          </div>
-        </div>
-</div>
-</section> <!--back button-->
-</section>
+    </section>
+
+    <div class="copyright">
+        <p>&copy; 2024 Small Steps ECD Centre. All Rights Reserved.</p>
+    </div>
 </body>
-</div>
-</div>
-<footer>
-
-</footer>
-<div class="copyright"> <!--copyright-->
-  <p>&copy; 2024 SmallSteps Pre-school. All rights reserved.</p>
 </html>
