@@ -3,9 +3,9 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Payment </title>
-        <link rel="stylesheet" href="./styles/pay.css" link>
+        <link rel="stylesheet" href="pay.css" link>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <script src="./styles/JavaScript/pay.js"></script>
+        <script src="pay.js"></script>
  
     </head>
  
@@ -230,7 +230,7 @@
             <div id="payment-details" style="padding: 3px 0;"></div>
         </div>
         <hr style="border:1px solid orange; margin: 0 15px;">
-        <img src="./images/images/Fees/card_img.png" alt="" class="img">
+        <img src="card_img.png" alt="" class="img">
     </div>
 </div>
 
@@ -285,18 +285,22 @@ window.onload = function() {
             if (!eDate.value || !isValidExpiration(eDate.value)) {
                 eDate.style.border = "1px solid red";
             }
-            if (!emailInput.value) {
-                emailInput.style.border = "1px solid red"; // Fixed the border style
-                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (email === "") {
-                document.getElementById('email').innerHTML = "email is required";
-                isValid = false;
+            const emailValue = emailInput.value.trim();
+            const emailPatten = /^[^s@]+@[^\s@]+\.[^\s@\s@]+$/;
+            if(!emailPatten.test(emailValue)){
+                emailInput.style.border ="1px solid red";
             }
-                else if (!emailPattern.test(email)){
-                document.getElementById('email').innerHTML = "please enter a valid email address";
-                isValid = false;
-                }
-            }
+            // validate email button when the user clicks on paynow button without filling fields the email border must be red
+            // var emailPattern = /^[^s@]+@[^\s@]+\.[^\s@\s@]+$/;
+            // if(emailInput === ""){
+            //     document.getElementById('email').innerHTML = "email is required";
+            //     isValid = false;
+            // }else if(!emailPattern.test(emailInput)){
+            //     document.getElementById('email').innerHTML = "Please enter correct email";
+            //     isValid = false;
+            // }
+          // VALIDATE AN EMAIL WHEN A USER ENTER WORDS ONLY WITHOUT @ CHARACTER MUST VALIDATE, ALSO THE PAYNOW BUTTON MUST NOT THE EMAIL THAT IS NOT VALID.
+            
         }
     });
 
@@ -304,9 +308,10 @@ window.onload = function() {
         const cNumberValue = cNumber.value.replace(/\s/g, '');
         const eDateValue = eDate.value;
         const cvvValue = cvv.value;
-        const emailValue = emailInput.value;
+        const emailValue = emailInput.value.trim();
+        const emailPattern = /^[^s@]+@[^\s@]+\.[^\s@\s@]+$/;
 
-        if (!cNumberValue || !eDateValue || !cvvValue || cvvValue.length < 3 || cNumberValue.length < 16 || !emailValue) {
+        if (!cNumberValue || !eDateValue || !cvvValue || cvvValue.length < 3 || cNumberValue.length < 16 || !emailValue || !emailPattern.test(emailValue)) {
             return false;
         }
 
