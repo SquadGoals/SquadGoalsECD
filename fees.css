@@ -97,7 +97,7 @@ width: 100%;
 /*  fee Container */
 .fees{
      margin: 0; 
-     background-image: url('../images/images/Fees/background.jpg');
+     background-image: url('background.jpg');
      background-position: right bottom, left top;
      background-repeat: no-repeat, repeat;
      background-size: cover;
