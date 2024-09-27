@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             daysContainer.appendChild(dayDiv);
         }
-
+          
         // Next Month's Date
         const nextMonthStartDay = 7 - new Date(year, month + 1, 0).getDay() - 1;
         for (let i = 1; i <= nextMonthStartDay; i++) {
@@ -234,7 +234,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const date = selectedDateInput.value;
         const name = document.getElementById('name').value;
         const time = document.getElementById('time').value;
-
+        
+        const [hours, minutes] = time.split(':');
+        if (hours < 8 || hours > 16 || (hours == 16 && minutes !=0)) {
+        alert('Please choose a time between 08:00 and 16:00.');
+        return;
+        }
         if (name && time) {
             bookedDates[date] = {name, time}; // Store booking details
             renderCalender(currentDate);
